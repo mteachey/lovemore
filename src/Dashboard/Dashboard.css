@@ -1,0 +1,10 @@
+.progress{
+    display:flex;
+    justify-content: space-between;
+    flex-wrap:wrap;
+}
+
+.progress section{
+    width:32%;
+    border:1px solid gray;
+}
