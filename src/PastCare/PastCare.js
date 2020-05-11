@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+import EntryList from '../EntryList/EntryList.js';
+import FilterSortRow from '../FilterSortRow/FilterSortRow.js'
+import LoveMoreContext from '../LoveMoreContext'
 
 class PastCare extends Component{
+    static contextType = LoveMoreContext;
     render(){
         return(
             <div className="past-care">
@@ -8,7 +12,13 @@ class PastCare extends Component{
                     <h1>Your Self-Care Entries</h1>
                 </header>
                 <main>
-
+                    <FilterSortRow
+                     
+                     />
+                    <EntryList
+                     typeOfResults = {'Self-Care'}
+                     results ={this.context.selfcare}
+                    />                   
                 </main>
 
             </div>

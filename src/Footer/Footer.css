@@ -1,6 +1,8 @@
 .footer{
     display:flex;
     justify-content:space-between;
+    border-top:1px solid black;
+    margin-top:25px;
 }
 
 .footer-section{

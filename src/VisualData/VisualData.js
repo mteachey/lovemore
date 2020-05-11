@@ -5,7 +5,7 @@ class VisualData extends Component{
         return(
             <section className="visual-data">
                 <header>
-                    <h3>Your Laugh More Love More Dashboard</h3>
+                    <h3>Visual Data</h3>
                 </header>
                 <main>
 

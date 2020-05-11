@@ -6,7 +6,7 @@ export default {
             "content":"Did 15 minutes of Duolingo",
             "type":"intellectual",
             "rating":"5",
-            "date":"05,05,2020"           
+            "date":"May 5th 2020"           
         },
         {
             "id":"2",
@@ -14,7 +14,7 @@ export default {
             "content":"Sat in the park and read a book",
             "type":"emotional",
             "rating":"5",
-            "date":"05,03,2020"           
+            "date":"May 3rd 2020"           
         },
         {
             "id":"3",
@@ -22,7 +22,7 @@ export default {
             "content":"Filled out my daily gratitude",
             "type":"spiritual",
             "rating":"2",
-            "date":"05,07,2020"           
+            "date":"May 3rd 2020"           
         },
         {
             "id":"4",
@@ -30,7 +30,7 @@ export default {
             "content":"Went for a run",
             "type":"physical",
             "rating":"5",
-            "date":"05,06,2020"           
+            "date":"May 1st 2020"           
         }
     ],
 
@@ -39,25 +39,25 @@ export default {
             "id":"1",
             "user_id":"1",
             "content":"I kept my cool with the service phone rep",
-            "date":"05,05,2020"           
+            "date":"May 7th 2020"           
         },
         {
             "id":"2",
             "user_id":"1",
             "content":"A catch up phone call with Kelsie",
-            "date":"05,05,2020"           
+            "date":"May 7th 2020"           
         },
         {
             "id":"3",
             "user_id":"1",
             "content":"Seeing the tulips blooming",
-            "date":"05,05,2020"           
+            "date":"April 20th 2020"           
         },
         {
             "id":"4",
             "user_id":"1",
             "content":"The yummy pizza I had for dinner last night",
-            "date":"05,06,2020"           
+            "date":"Mar 3rd 2020"           
         },
     ],
     goals:{
@@ -109,7 +109,37 @@ export default {
             "content":"May the flowers remind us why the rain was so necessary",
             "author": "Xan Oku",
         },
-
+        {
+            "id":"5",
+            "content":"For this to reveal themselves to us, we need to be ready to abandon our views about them",
+            "author": "Thich Nhat Hanh",
+        },
+        {
+            "id":"6",
+            "content":"What a catepillar calls the enbd of the world, we call a butterfly",
+            "author": "Eckhart Tolle",
+        },
+        {
+            "id":"7",
+            "content":"If you get tired, learn to rest, not quit",
+            "author": "unknown",
+        },
+        {
+            "id":"8",
+            "content":"Be kinder to yourself. And then let your kindess flood the world.",
+            "author": "Pema Chodron",
+        },
+        {
+            "id":"9",
+            "content":"Forgive yourself for not knowing what you didn't know before you learned it",
+            "author": "unknown",
+        },
+        {
+            "id":"10",
+            "content":"Decide what kind of life you want. Then say no to everything that isn't that.",
+            "author": "unknown",
+        },
+              
     ],
 
 }

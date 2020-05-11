@@ -6,25 +6,17 @@ class ActivityList extends Component{
     static contextType = LoveMoreContext;
 
     render(){
-
-        //need to make this the most recent 3
-        const selfcareObj = this.context.selfcare;
-        console.log(selfcareObj);
-
+       
+        let results = this.props.list
+        
         return(
             <section className="recent-activities">
-                <header>
-                    <h4>Some of Your Past Activity</h4>
-                </header>
                 <main>
                     <ul className="recent-activities-list">
-                        <li>What you did</li>
-                        {selfcareObj.map(entry=> 
-
-                            <li key={entry.id} className="recent-activities-item">{entry.content} {entry.date}</li>)}
-                        
+                         <li>{this.props.listHeading}</li>
+                        {results.map(entry=> 
+                            <li key={entry.id} className="recent-activities-item"><span>{entry.content}</span><span>{entry.date}</span></li>)}                        
                     </ul>
-
                 </main>
             </section>
         )

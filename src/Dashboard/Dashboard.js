@@ -1,6 +1,7 @@
 import React, { Component } from 'react'; 
 import Progress from '../Progress/Progress';
 import ButtonRow from '../ButtonRow/ButtonRow'
+import RandomQuote from '../RandomQuote/RandomQuote.js'
 import './Dashboard.css'
 
 
@@ -10,6 +11,7 @@ class Dashboard extends Component{
             <div className="dashboard">
                 <header>
                     <h1>Your Laugh More Love More Dashboard</h1>
+                    <RandomQuote/>
                 </header>
                 <main>
                     <Progress/>

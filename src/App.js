@@ -34,7 +34,6 @@ class App extends Component{
       }
     return(
       <div className="App">
-        <p>the whole App will go here</p>
         <LoveMoreContext.Provider value={contextValue}>
         <Nav/>
         <Route

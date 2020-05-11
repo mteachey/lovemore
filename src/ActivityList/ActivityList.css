@@ -1,0 +1,11 @@
+.recent-activities-item span{
+    display:inline-block;
+}
+
+.recent-activities-item span:nth-child(1){
+    width: 300px;
+    
+}
+.recent-activities-item span:nth-child(1){
+
+}

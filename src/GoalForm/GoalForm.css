@@ -1,0 +1,26 @@
+.goal-form{
+    font-size: 17px;
+}
+
+label {
+    margin-right: 5px;
+}
+
+select {
+    font-size: 14px;
+}
+
+fieldset {
+    margin-bottom: 30px;
+}
+
+.goal-form {
+    text-align: left;
+    max-width: 500px;
+    margin: auto;
+}
+
+button{
+    font-size:17px;
+    margin:0px 10px
+}

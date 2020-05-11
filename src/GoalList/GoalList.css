@@ -1,0 +1,23 @@
+.goal-list {
+    text-align: center;
+    padding-inline-start: 0px;
+}
+
+.goal-item span {
+    display: inline-block;
+    width: 135px;
+}
+
+.goal-item{
+    display: flex;
+    justify-content: space-around;
+    font-size:1em;
+}
+
+.goal-list li:nth-child(1){
+    font-size:1em;
+}
+.goal-list li:nth-child(1) span{
+    border-bottom: 1px solid gray;
+    padding-bottom: 5px;
+}
