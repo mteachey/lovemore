@@ -13,7 +13,8 @@ class PastGratitude extends Component{
                     <h1>Your Gratitude Entries</h1>
                 </header>
                 <main>
-                    <FilterSortRow                    
+                    <FilterSortRow  
+                      filterOptions = {'date-only'}                  
                      />
                     <EntryList
                      typeOfResults = {'Gratitude'}

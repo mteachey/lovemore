@@ -115,9 +115,10 @@ class DailyForm extends Component{
                         <option value="5">5</option>
                     </select>       
                 </fieldset>                
-                    
-             <button type="submit">Submit</button>
-             <button type="input">Cancel</button>
+             <div className="button-row">    
+                <button type="submit">Submit</button>
+                <button type="input">Cancel</button>
+             </div>
             </form>
         </section>
         )

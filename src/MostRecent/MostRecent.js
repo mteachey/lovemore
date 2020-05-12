@@ -13,14 +13,14 @@ class MostRecent extends Component{
                 </header>
                 <main>
                     <ActivityList
-                       type={'activity'}
+                       typePage={'activity'}
                        list = {this.context.selfcare}
                        listHeading = {'Your Most Recent Self-Care Activities'}
                        random = {false} />
                     <ActivityList
-                       type={'gratitude'}
+                       typePage={'gratitude'}
                        list = {this.context.gratitude}
-                       listHeading = {`Past Gratitudes`} 
+                       listHeading = {`Some of Your Past Gratitudes`} 
                        random = {true}/>
                 </main>
             </section>

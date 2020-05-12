@@ -13,7 +13,7 @@ class PastCare extends Component{
                 </header>
                 <main>
                     <FilterSortRow
-                     
+                        filterOptions = {'all'}    
                      />
                     <EntryList
                      typeOfResults = {'Self-Care'}

@@ -7,7 +7,7 @@ class RandomQuote extends Component{
 
     chooseQuote=()=>{
         let numberOfQuotes = this.context.quotes.length;
-        let quotePickNumber = Math.floor(Math.random() * (numberOfQuotes+1));
+        let quotePickNumber = Math.floor(Math.random() * (numberOfQuotes));
         let quote = this.context.quotes[quotePickNumber].content;
         console.log(quotePickNumber)
         return quote

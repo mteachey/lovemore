@@ -6,14 +6,11 @@ import './EntryList.css'
 class EntryList extends Component{
     static contextType = LoveMoreContext;
 
-    
-    
     render(){
         const { results, typeOfResults} = this.props;
         console.log(typeOfResults)
         return(
             <section className="results-list">
-                <main>
                     <ul className="result-list">                      
                         {results.map(entry=> 
                         <EntryItem
@@ -23,8 +20,6 @@ class EntryList extends Component{
                         />
                         )}
                     </ul>
-
-                </main>
             </section>
         )
     }

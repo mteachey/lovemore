@@ -62,8 +62,8 @@ export default {
     ],
     goals:{
         "emotional": "4",
-        "physical":"5",
         "spiritual":"7",
+        "physical":"5",
         "intellectual":"7"
     },
     inspiration:[
@@ -86,6 +86,11 @@ export default {
             "id":"4",
             "content":"Meditate for 5 minutes (...or more)",
             "type":"spiritual",        
+        },
+        {
+            "id":"5",
+            "content":"Listen to Inspire Nation by Michael Sandler and Jessica Lee podcast",
+            "type":"emotional",        
         },
     ],
     quotes:[
@@ -116,7 +121,7 @@ export default {
         },
         {
             "id":"6",
-            "content":"What a catepillar calls the enbd of the world, we call a butterfly",
+            "content":"What a catepillar calls the end of the world, we call a butterfly",
             "author": "Eckhart Tolle",
         },
         {
@@ -139,6 +144,27 @@ export default {
             "content":"Decide what kind of life you want. Then say no to everything that isn't that.",
             "author": "unknown",
         },
+        {
+            "id":"11",
+            "content":"Very little grows on jagged rocks. Be grounded. Be crumbled so wildflowers will come up where you are.",
+            "author": "Rumi",
+        },
+        {
+            "id":"12",
+            "content":"Very little grows on jagged rocks. Be grounded. Be crumbled so wildflowers will come up where you are.",
+            "author": "Rumi",
+        },
+        {
+            "id":"13",
+            "content":"With life as short as a half taken breath, don't plant anything but love.",
+            "author": "Rumi",
+        },
+        {
+            "id":"14",
+            "content":"Only from the heart can you touch the sky",
+            "author": "Rumi",
+        },
+
               
     ],
 

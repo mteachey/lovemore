@@ -22,5 +22,11 @@ fieldset {
 
 button{
     font-size:17px;
-    margin:0px 10px
+    margin:0px 10px;
+    border: 1px #40004b solid;
+    padding:10px;
+    width:120px;
+    margin: 10px;
+    text-decoration: none;
+    display: inline-block;
 }

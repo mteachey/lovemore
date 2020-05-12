@@ -8,6 +8,7 @@
 .footer-section{
     width:23%;
     border-right:1px black solid;
+    text-align: center;
 }
 
 .footer-section:nth-last-child(1){

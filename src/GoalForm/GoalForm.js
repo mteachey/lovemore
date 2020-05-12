@@ -70,9 +70,11 @@ class GoalForm extends Component{
                                 <option value="7">7</option>
                                 <option value="8">more than 7</option>
                             </select>
-                        </fieldset>    
-                        <button type="submit">Submit</button>
-                        <button type="input">Cancel</button>            
+                        </fieldset> 
+                        <div className="button-row">   
+                            <button type="submit">Submit</button>
+                            <button type="input">Cancel</button>    
+                        </div>        
                     </form>
                 </main>
             </div>

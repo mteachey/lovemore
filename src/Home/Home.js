@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import About from '../About/About';
 import LearnMore from '../LearnMore/LearnMore.js'
 import ButtonRow from '../ButtonRow/ButtonRow.js';
-import RandomQuote from '../RandomQuote/RandomQuote.js'
+//import RandomQuote from '../RandomQuote/RandomQuote.js'
 import './Home.css'
 
 class Home extends Component{
@@ -11,15 +11,12 @@ class Home extends Component{
             <div className="home">
                 <header>
                     <h1>Love More Laugh More</h1>
-                    <h2>A tagline will go here</h2>
+                    <h2 className="tagline">Find the sweetness in your own heart, then you may find the sweetness in every heart.</h2>
+                    
                  </header>
-                 <main>
-                     <RandomQuote/>
+                 <main>                   
                      <ButtonRow
-                        link1 = {`/dashboard`}
-                        link1_lable = {`Start`}
-                        link2 ={`/#about`}
-                        link2_lable = {`Learn More`}
+                        links ={[{'/dashboard':'Start'},{'/#about':'Learn More'}]}
                         />
                     <About/>
                     <LearnMore/>

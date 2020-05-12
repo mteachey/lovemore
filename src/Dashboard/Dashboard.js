@@ -5,28 +5,20 @@ import RandomQuote from '../RandomQuote/RandomQuote.js'
 import './Dashboard.css'
 
 
+
 class Dashboard extends Component{
     render(){
         return(
             <div className="dashboard">
                 <header>
                     <h1>Your Laugh More Love More Dashboard</h1>
-                    <RandomQuote/>
+                   <RandomQuote/>
                 </header>
                 <main>
                     <Progress/>
                     <ButtonRow
-                      link1={`/daily-form`}
-                      link1_lable={`Today's Care and Gratitude`}
-                      link2={`/past-care`}
-                      link2_lable={`Your Past Care Entries`}
-                      link3={`/past-gratitudde`}
-                      link3_lable={`Your Past Gratitudes`}
-                      link4={`/goal-form`}
-                      link4_lable={`Set Your Goals`}
-                      link5={`/inspiration`}
-                      link5_lable={`Get Inspired`}
-                    />
+                        links ={[{'/daily-form':'Today\'s Care & Gratitude'},{'/past-care':'Your Past Care Entries'},{'/past-gratitude':'Your Past Gratitudes'},{'/goal-form':'Set Your Goals'},{'/inspiration':'Get Inspired, Get Grateful'}]}
+                        />
                 </main>
             </div>
         )

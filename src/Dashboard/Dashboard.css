@@ -1,7 +1,9 @@
 .progress{
     display:flex;
+    flex-direction:column;
     justify-content: space-around;
     flex-wrap:wrap;
+    align-items:center;
 }
 
 .progress > section{
@@ -11,14 +13,7 @@
 }
 
 .most-recent,.visual-data {
-    width:45%;
-}
-
-.dashboard ul{
-    list-style-type: none;
-    padding-inline-start: 0px;
-    padding:0 10px;
-    text-align: left;
+    width:95%;
 }
 
 li{
@@ -26,22 +21,21 @@ li{
     margin-left:5px;
 }
 
-.dashboard li{
-    border:1px solid gray;
-    border-radius:5px;
-    padding:5px;
-    margin-inline-start: 0px;
-}
-
-.dashboard li:nth-child(1){
-    font-weight:600;
-    font-size:1.15em;
-    margin-left:0;
-    border-width:0;
-}
-
-
-
 .button-row{
     margin:25px auto;
+}
+
+@media only screen and (min-width:760px){
+    .progress{
+        flex-direction:row;
+        justify-content: space-around;
+        flex-wrap:wrap;
+        align-items: unset;
+    }
+
+    .most-recent,.visual-data {
+        width:48%;
+        min-width:467px;
+    }
+
 }

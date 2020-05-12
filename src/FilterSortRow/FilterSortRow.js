@@ -5,18 +5,46 @@ import './FilterSortRow.css'
 class FilterSortRow extends Component{
     static contextType = LoveMoreContext;
     render(){
-       
-        return(
-            <section className="filter-section">
-                <form>
+        let filter = '';
+        if(this.props.filterOptions==='date-only'){
+            filter = (
+             <form className="filter-sort-control">
+                <div>
                     <label htmlFor="search-date">Search For a Date</label>
                     <input id="search-date" name="search-date" type="date"/>
-                    <label htmlFor="sort">Sort By</label>
-                    <select id="sort">
-                        <option value="by_date">Date</option>
-                        <option value="by_rating">Rating</option>
+                </div>
+            </form>
+            )
+        }
+        else if(this.props.filterOptions==='type-only'){
+            filter =  (
+            <form className="filter-sort-control">
+                <div>
+                <label htmlFor="type_filter">Filter by Type</label>                    
+                    <select id="type_filter">
+                        <option value="emotional">emotional</option>
+                        <option value="spiritual">spiritual</option>
+                        <option value="physical">physical</option>
+                        <option value="intellectual">intellectual</option>
                     </select>
-                    <div className="optional-filters">
+                </div>
+            </form>
+            )}
+        else if(this.props.filterOptions==='all')
+            {  filter = (
+                <form className="filter-sort-control">
+                    <div>
+                        <label htmlFor="search-date">Search For a Date</label>
+                        <input id="search-date" name="search-date" type="date"/>
+                    </div>
+                    <div>
+                        <label htmlFor="sort">Sort By</label>
+                        <select id="sort">
+                            <option value="by_date">Date</option>
+                            <option value="by_rating">Rating</option>
+                        </select>
+                    </div>
+                    <div>
                     <label htmlFor="type_filter">Filter by Type</label>                    
                         <select id="type_filter">
                             <option value="emotional">emotional</option>
@@ -24,6 +52,8 @@ class FilterSortRow extends Component{
                             <option value="physical">physical</option>
                             <option value="intellectual">intellectual</option>
                         </select>
+                    </div>
+                    <div>
                         <label htmlFor="rating_filter">Filter by Your Rating</label>
                         <select id="rating_filter">
                             <option value="1">1</option>
@@ -33,8 +63,11 @@ class FilterSortRow extends Component{
                             <option value="5">5</option>
                         </select>
                     </div>
-                </form>             
-            </section>
+                </form>)
+            }
+    
+        return(    
+                   filter
         )
     }
 }

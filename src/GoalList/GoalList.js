@@ -1,5 +1,6 @@
 import React, { Component } from 'react'; 
-import LoveMoreContext from '../LoveMoreContext'
+import LoveMoreContext from '../LoveMoreContext';
+import { Link } from 'react-router-dom'
 import './GoalList.css'
 
 class GoalList extends Component{
@@ -16,10 +17,8 @@ class GoalList extends Component{
                         <li className="goal-item"><span>Type of <br/>Self-Care</span><span>Number of times (per week)</span></li>
                         {Object.entries(goalsObj).map((entry,i)=> 
                             <li key={i} className="goal-item"><span>{entry[0]}</span><span>{entry[1]}</span></li>)}                 
-                                     
-
                     </ul>
-
+                    <Link className="button-link" to={'/goal-form'}>Update</Link>
                 </main>
             </section>
         )
