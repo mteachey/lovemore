@@ -11,9 +11,20 @@ import GoalForm from './GoalForm/GoalForm.js'
 import Nav from './Nav/Nav.js';
 import Footer from './Footer/Footer.js'
 import LoveMoreContext from './LoveMoreContext.js';
+import data from './data.js'
 
 
 class App extends Component{
+  constructor(props){
+    super(props);
+    this.state={
+      selfcare:data.selfcare,
+      gratitude:data.gratitude,
+      goals:data.goals,
+      inspiration:data.inspiration,
+      quotes:data.quotes,
+    }
+  }
   static defaultProps ={
     data:{
       selfcare:[],
@@ -26,11 +37,11 @@ class App extends Component{
 
   render(){
     const contextValue = {
-      selfcare:this.props.data.selfcare,
-      gratitude:this.props.data.gratitude,
-      goals:this.props.data.goals,
-      inspiration:this.props.data.inspiration,
-      quotes:this.props.data.quotes,
+      selfcare:this.state.selfcare,
+      gratitude:this.state.gratitude,
+      goals:this.state.goals,
+      inspiration:this.state.inspiration,
+      quotes:this.state.quotes,
       }
     return(
       <div className="App">

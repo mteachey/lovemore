@@ -5,7 +5,11 @@ const LoveMoreContext = React.createContext({
       gratitude:[],
       goals:{},
       inspiration:[],
-      quotes:[]
+      quotes:[],
+      addSelfCare:()=>{},
+      addGratitude:()=>{},
+      updateGoals:()=>{}
+     
 })
 
 export default LoveMoreContext;
