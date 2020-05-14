@@ -1,7 +1,7 @@
 export default {
     selfcare:[
         {
-            "id":"1",
+            "selfcare_id":"1",
             "user_id":"1",
             "content":"Did 15 minutes of Duolingo",
             "type":"intellectual",
@@ -9,7 +9,7 @@ export default {
             "date":"May 5th 2020"           
         },
         {
-            "id":"2",
+            "selfcare_id":"2",
             "user_id":"1",
             "content":"Sat in the park and read a book",
             "type":"emotional",
@@ -17,7 +17,7 @@ export default {
             "date":"May 3rd 2020"           
         },
         {
-            "id":"3",
+            "selfcare_id":"3",
             "user_id":"1",
             "content":"Filled out my daily gratitude",
             "type":"spiritual",
@@ -25,10 +25,18 @@ export default {
             "date":"May 3rd 2020"           
         },
         {
-            "id":"4",
+            "selfcare_id":"4",
             "user_id":"1",
             "content":"Went for a run",
             "type":"physical",
+            "rating":"5",
+            "date":"May 1st 2020"           
+        },
+        {
+            "selfcare_id":"5",
+            "user_id":"1",
+            "content":"Had a small social gathering with two amazing ladies",
+            "type":"emotional",
             "rating":"5",
             "date":"May 1st 2020"           
         }
@@ -36,25 +44,25 @@ export default {
 
     gratitude:[
         {
-            "id":"1",
+            "gratitude_id":"1",
             "user_id":"1",
             "content":"I kept my cool with the service phone rep",
             "date":"May 7th 2020"           
         },
         {
-            "id":"2",
+            "gratitude_id":"2",
             "user_id":"1",
             "content":"A catch up phone call with Kelsie",
             "date":"May 7th 2020"           
         },
         {
-            "id":"3",
+            "gratitude_id":"3",
             "user_id":"1",
             "content":"Seeing the tulips blooming",
             "date":"April 20th 2020"           
         },
         {
-            "id":"4",
+            "gratitude_id":"4",
             "user_id":"1",
             "content":"The yummy pizza I had for dinner last night",
             "date":"Mar 3rd 2020"           
@@ -68,12 +76,12 @@ export default {
     },
     inspiration:[
         {
-            "id":"1",
+            "inspire_id":"1",
             "content":"Learn a new language with Duolingo - you can commit 10 minutes a day",
             "type":"intellectual",        
         },
         {
-            "id":"2",
+            "inspire_id":"2",
             "content":"Go for a walk",
             "type":"physical",        
         },
@@ -83,12 +91,12 @@ export default {
             "type":"emotional",        
         },
         {
-            "id":"4",
+            "inspire_id":"4",
             "content":"Meditate for 5 minutes (...or more)",
             "type":"spiritual",        
         },
         {
-            "id":"5",
+            "inspire_id":"5",
             "content":"Listen to Inspire Nation by Michael Sandler and Jessica Lee podcast",
             "type":"emotional",        
         },
@@ -167,5 +175,44 @@ export default {
 
               
     ],
+    mood:[{
+        "mood_id":"1",
+        "user_id":"1",
+        "mood_level":"4",
+        "date":"Mar 3rd 2020",   
+    },
+    {
+        "mood_id":"2",
+        "user_id":"1",
+        "mood_level":"5",
+        "date":"Mar 3rd 2020",   
+    },
+    {
+        "mood_id":"3",
+        "user_id":"1",
+        "mood_level":"5",
+        "date":"Mar 3rd 2020",   
+    },
+   ],
+energy:[{
+    "energy_id":"1",
+    "user_id":"1",
+    "energy_level":"4",
+    "date":"Mar 3rd 2020",   
+    },
+    {
+    "energy_id":"2",
+    "user_id":"1",
+    "energy_level":"5",
+    "date":"Mar 3rd 2020",   
+    },
+    {
+    "energy_id":"3",
+    "user_id":"1",
+    "energy_level":"5",
+    "date":"Mar 3rd 2020",   
+    },
+],
+
 
 }

@@ -8,6 +8,8 @@ const LoveMoreContext = React.createContext({
       quotes:[],
       addSelfCare:()=>{},
       addGratitude:()=>{},
+      addEnergy:()=>{},
+      addMood:()=>{},
       updateGoals:()=>{}
      
 })

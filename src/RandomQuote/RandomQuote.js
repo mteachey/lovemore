@@ -17,7 +17,7 @@ class RandomQuote extends Component{
     render(){
         return(
             <div className="quote">
-               <p>"{this.chooseQuote()}"</p>
+               <p>Your Daily Quote : "{this.chooseQuote()}"</p>
             </div>
         )
     }

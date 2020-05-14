@@ -23,17 +23,48 @@ class App extends Component{
       goals:data.goals,
       inspiration:data.inspiration,
       quotes:data.quotes,
+      mood:data.mood,
+      energy:data.energy,
     }
   }
-  static defaultProps ={
-    data:{
-      selfcare:[],
-      gratitude:[],
-      goals:{},
-      inspiration:[],
-      quotes:[]
+ 
+addSelfCare=(newSelfCare)=>{
+  this.setState({
+    selfcare: [...this.state.selfcare, ...newSelfCare]
+    },()=>{console.log(`this is the value from addSelfCare length ${this.state.selfcare.length} obj ${this.state.selfcare[this.state.selfcare.length-1].content}`)
+  })  
+};
+
+addGratitude=(newGratitude)=>{
+  console.log(`this is the OG length ${this.state.gratitude.length}`)
+  this.setState({
+    gratitude: [...this.state.gratitude, ...newGratitude]},()=>{
+      console.log(`this is the newG length ${this.state.gratitude.length}`)
     }
-  };
+  )
+  
+};
+
+addMood=(newMood)=>{
+  console.log(this.state.mood.length)
+  this.setState({
+    mood: [...this.state.mood, newMood]
+  },()=>{console.log(this.state.mood.length)})
+}
+
+addEnergy=(newEnergy)=>{
+  console.log(this.state.energy.length)
+  this.setState({
+    energy: [...this.state.energy, newEnergy]
+  },()=>{console.log(this.state.energy.length)})
+}
+
+updateGoals=(newgoals)=>{
+  this.setState({
+    goals:newgoals
+  },()=>{console.log(this.state.goals)})
+}
+
 
   render(){
     const contextValue = {
@@ -42,6 +73,11 @@ class App extends Component{
       goals:this.state.goals,
       inspiration:this.state.inspiration,
       quotes:this.state.quotes,
+      addSelfCare:this.addSelfCare,
+      addGratitude:this.addGratitude,
+      addEnergy:this.addEnergy,
+      addMood:this.addMood,
+      updateGoals:this.updateGoals,
       }
     return(
       <div className="App">

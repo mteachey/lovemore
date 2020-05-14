@@ -11,7 +11,7 @@ class EntryItem extends Component{
         console.log(`this is the ${typeOfResults}`);
         let listItem = ''
         if(typeOfResults==='Self-Care'){
-            listItem = (<li key={this.props.id} className="result-item">
+            listItem = (<li key={this.props.selfcare_id} className="result-item">
             <span className="result-content">{content}</span>
             <span className="result-date">{date}</span>
             <span className="result-type">Type : {type}</span>
@@ -19,13 +19,13 @@ class EntryItem extends Component{
             </li> )
         }
         else if(typeOfResults === 'Gratitude'){
-            listItem = (<li key={this.props.id} className="result-item">
+            listItem = (<li key={this.props.gratitude_id} className="result-item">
             <span className="result-content">{content}</span>
             <span className="result-date">{date}</span>
             </li> )
         }
         else if(typeOfResults === 'Inspiration'){
-            listItem = (<li key={this.props.id} className="result-item">
+            listItem = (<li key={this.props.inspire_id} className="result-item">
             <span className="result-content">{content}</span>
             <span className="result-type">Type : {type}</span>
             </li> )

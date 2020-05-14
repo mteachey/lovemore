@@ -16,14 +16,17 @@ class ActivityList extends Component{
            }
        
         let results = this.props.list
+        /*if(this.props.typePage ==='activity')
+        {   const newIndex = results.length - 1;
+            console.log(`these are the results ${results[newIndex].content}`)}*/
         
         return(
             <section className="recent-activities">
                 <Link className="button-link" to={linkURL}>See All</Link>
                     <ul className="recent-activities-list">
                          <li>{this.props.listHeading}</li>
-                        {results.map(entry=> 
-                            <li key={entry.id} className="recent-activities-item"><span>{entry.content}</span><span>{entry.date}</span></li>)}                        
+                        {results.map((entry,i)=> 
+                            <li key={i} className="recent-activities-item"><span>{entry.content}</span><span>{entry.date}</span></li>)}                        
                     </ul>
             </section>
         )

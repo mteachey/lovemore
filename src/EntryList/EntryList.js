@@ -8,14 +8,13 @@ class EntryList extends Component{
 
     render(){
         const { results, typeOfResults} = this.props;
-        console.log(typeOfResults)
         return(
             <section className="results-list">
                     <ul className="result-list">                      
-                        {results.map(entry=> 
+                        {results.map((entry,i)=> 
                         <EntryItem
                            typeOfResults = {typeOfResults}
-                           key={entry.id}
+                           key={i}
                            {...entry}
                         />
                         )}

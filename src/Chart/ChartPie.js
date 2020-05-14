@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
+import LoveMoreContext from '../LoveMoreContext.js'
 
-import data from './data-pie'
+//import data from './data-pie'
 
 import { ResponsivePie } from '@nivo/pie'
 // make sure parent container have a defined height when using
@@ -9,12 +10,62 @@ import { ResponsivePie } from '@nivo/pie'
 // website examples showcase many properties,
 // you'll often use just a few of them.
 class ChartPie extends Component {
+    static contextType =LoveMoreContext;
+
+calculateTypeProgress=()=>{
+        let progressIntellectual = 0;
+        let progressEmotional =0;
+        let progressPhysical = 0;
+        let progressSpiritual = 0;
+    
+        this.context.selfcare.forEach(obj=>{
+            if(obj.type==="intellectual"){
+                progressIntellectual = progressIntellectual+1
+            }
+            else if(obj.type==="emotional"){
+                progressEmotional = progressEmotional+1
+            }
+            else if(obj.type==="spiritual"){
+                progressSpiritual = progressSpiritual+1
+            }
+            else if(obj.type==="physical"){
+                progressPhysical = progressPhysical+1
+            }
+        })
+        let progressArray = [progressIntellectual,progressEmotional, progressSpiritual,progressPhysical]
+        return progressArray
+}
 
     render() {
+        let progressArray = this.calculateTypeProgress();
+       // let goals = this.context.goals;
+        let pieData = [
+            {
+                "id": "emotional",
+                "label": "emotional",
+                "value": progressArray[1],
+              },
+              {
+                "id": "spiritual",
+                "label": "spiritual",
+                "value": progressArray[2],
+              },
+              {
+                "id": "physical",
+                "label": "physical",
+                "value": progressArray[3],
+              },
+              {
+                "id": "intellectual",
+                "label": "intellectual",
+                "value": progressArray[0],
+              },
+
+        ]
         return (
     <div className="chart">
     <ResponsivePie
-        data={data}
+        data={pieData}
         margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
         innerRadius={0.5}
         padAngle={0.7}

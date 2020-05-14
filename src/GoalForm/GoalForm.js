@@ -1,7 +1,60 @@
 import React, { Component } from 'react';
+import LoveMoreContext from '../LoveMoreContext.js'
 import './GoalForm.css'
 
 class GoalForm extends Component{
+ static contextType = LoveMoreContext;
+ constructor(props){
+     super(props);
+     this.state={
+        emotional:{
+            value:"",
+            touched:false,
+        },
+       
+        spiritual:{
+            value:"",
+            touched:false,
+        },
+        
+        intellectual:{
+            value:"",
+            touched:false,
+        },
+       
+        physical:{
+            value:"",
+            touched:false,
+        },
+       
+     }
+ }
+
+ updateCare=(number, inputId)=>{
+    if(inputId==='emotional')
+    {this.setState({emotional:{value:number , touched: true}})};
+    if(inputId==='physical')
+    {this.setState({physical:{value:number , touched: true}})};
+    if(inputId==='intellectual')
+    {this.setState({intellectual:{value:number , touched: true}})};
+    if(inputId==='spiritual')
+    {this.setState({spiritual:{value:number , touched: true}})};
+}
+
+handleSubmit=(e)=>{
+  e.preventDefault();
+  const { emotional, physical, spiritual, intellectual } = this.state;
+  const goals = {
+        "emotional": emotional.value,
+        "spiritual":spiritual.value,
+        "physical":physical.value,
+        "intellectual":intellectual.value
+  };
+  this.context.updateGoals(goals);
+  this.props.history.push('/dashboard');
+  console.log(goals)
+}
+
     render(){
         return(
             <div className="goalform">
@@ -9,16 +62,17 @@ class GoalForm extends Component{
                     <h1>Your Goals</h1>
                 </header>
                 <main>
-                    <form class="goal-form">
-                        <div class="form-intro">
+                    <form className="goal-form" onSubmit={e=>this.handleSubmit(e)}>
+                        <div className="form-intro">
                             <p>Please use this form to set a goal for yourself in the different areas of self-care.</p>
-                            <p>We know everyone is unique, so select the areas you want to focus on. Feel free to uncheck any area you're not interested in.</p>
+                            <p>We know everyone is unique, so select the areas you want to focus on. Feel free to leave any area as "no interest" that you're not interested in.</p>
                             <p>Please select a number of times each week you would like to give yourself that type of care.</p>
                         </div>
                         <fieldset>
                             <legend>Emotional Care</legend>
-                            <input type="checkbox" checked id="emotional" name="emotional" value="1"/>
-                            <select id="emotional-goal">
+                            <select id="emotional"
+                            onChange={e => this.updateCare(e.target.value, e.target.id)}>
+                                <option value="0">no interest</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -31,8 +85,9 @@ class GoalForm extends Component{
                         </fieldset>
                         <fieldset>
                             <legend>Spiritual Care</legend>
-                            <input type="checkbox" checked id="spiritual" name="spiritual" value="1"/>
-                            <select id="spiritual-goal">
+                            <select id="spiritual"
+                            onChange={e => this.updateCare(e.target.value, e.target.id)}>
+                                <option value="0">no interest</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -45,8 +100,9 @@ class GoalForm extends Component{
                         </fieldset>
                         <fieldset>
                             <legend>Intellectual Care</legend>
-                            <input type="checkbox" checked id="intellectual" name="intellectual" value="1"/>
-                            <select id="intellectual-goal">
+                            <select id="intellectual"
+                            onChange={e => this.updateCare(e.target.value, e.target.id)}>
+                                <option value="0">no interest</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -59,8 +115,9 @@ class GoalForm extends Component{
                         </fieldset>
                         <fieldset>
                             <legend>Physical Care</legend>
-                            <input type="checkbox" checked id="physical" name="physical" value="1"/>
-                            <select id="physical-goal">
+                            <select id="physical"
+                            onChange={e => this.updateCare(e.target.value, e.target.id)}>
+                             <option value="0">no interest</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
