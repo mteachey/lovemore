@@ -24,8 +24,7 @@ class App extends Component{
       goals:data.goals,
       inspiration:data.inspiration,
       quotes:data.quotes,
-      mood:data.mood,
-      energy:data.energy,
+      moods:data.moods,
       error:null,
     }
   }
@@ -46,6 +45,12 @@ addGratitude=(newGratitude)=>{
   )
   
 };
+
+addMoods=(newMoods)=>{
+  this.setState({
+    moods:[...this.state.moods, newMoods]
+  })
+}
 
 addMood=(newMood)=>{
   console.log(this.state.mood.length)
@@ -176,10 +181,35 @@ componentDidMount(){
     return res.json()
   })
   .then(data=>{
-    console.log(data)
-    /*this.setState({
-      quotes:data,
-     });*/
+    console.log(data[0])
+    let lastEntry = data.length
+    this.setState({
+      goals:data[lastEntry-1],
+     });
+  })
+  .catch(err => {
+    this.setState({
+      error: err.message
+    });
+  })
+  fetch(`${config.API_DEV_ENDPOINT}api/moods`,{
+    method:'GET',
+    headers:{
+      'content-type': 'application/json',
+      'Authorization': `Bearer ${config.API_KEY}`
+    },
+  })
+  .then(res=>{
+    if(!res.ok){
+      throw new Error('Something went wrong, please try again later');
+    }
+    return res.json()
+  })
+  .then(data=>{
+
+    this.setState({
+      moods:data,
+     });
   })
   .catch(err => {
     this.setState({
@@ -194,12 +224,12 @@ componentDidMount(){
       selfcare:this.state.selfcare,
       gratitude:this.state.gratitude,
       goals:this.state.goals,
+      moods:this.state.moods,
       inspiration:this.state.inspiration,
       quotes:this.state.quotes,
       addSelfCare:this.addSelfCare,
       addGratitude:this.addGratitude,
-      addEnergy:this.addEnergy,
-      addMood:this.addMood,
+      addMoods:this.addMoods,
       updateGoals:this.updateGoals,
       }
     return(

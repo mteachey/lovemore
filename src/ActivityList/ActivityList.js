@@ -26,7 +26,7 @@ class ActivityList extends Component{
                     <ul className="recent-activities-list">
                          <li>{this.props.listHeading}</li>
                         {results.map((entry,i)=> 
-                            <li key={i} className="recent-activities-item"><span>{entry.content}</span><span>{entry.date}</span></li>)}                        
+                            <li key={i} className="recent-activities-item"><span>{entry.content}</span><span>{entry.date_modified}</span></li>)}                        
                     </ul>
             </section>
         )

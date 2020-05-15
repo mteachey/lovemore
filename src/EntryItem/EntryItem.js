@@ -1,19 +1,20 @@
 import React, { Component } from 'react'; 
 import LoveMoreContext from '../LoveMoreContext'
 import './EntryItem.css'
+import { format } from 'date-fns'
 
 class EntryItem extends Component{
     static contextType = LoveMoreContext;
     
     render(){   
         
-        const {content, date, type, rating, typeOfResults } = this.props;
+        const {content, date_modified, type, rating, typeOfResults } = this.props;
         console.log(`this is the ${typeOfResults}`);
         let listItem = ''
         if(typeOfResults==='Self-Care'){
             listItem = (<li key={this.props.selfcare_id} className="result-item">
             <span className="result-content">{content}</span>
-            <span className="result-date">{date}</span>
+            <span className="result-date">{date_modified}</span>
             <span className="result-type">Type : {type}</span>
             <span className="result-rating">Your rating : {rating}</span>
             </li> )
@@ -21,7 +22,7 @@ class EntryItem extends Component{
         else if(typeOfResults === 'Gratitude'){
             listItem = (<li key={this.props.gratitude_id} className="result-item">
             <span className="result-content">{content}</span>
-            <span className="result-date">{date}</span>
+            <span className="result-date">{date_modified}</span>
             </li> )
         }
         else if(typeOfResults === 'Inspiration'){

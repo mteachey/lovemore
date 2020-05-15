@@ -141,7 +141,7 @@ handleSubmit = e =>{
                 content:activity1.value,
                 type:type1.value,
                 rating:rating1.value,
-                date:newdate,
+                date_modified:newdate,
             }]
       //  console.log(`nsc from form ${newSelfCare[0].content}`)
         if(activity2.value)
@@ -151,7 +151,7 @@ handleSubmit = e =>{
             content:activity2.value,
             type:type2.value,
             rating:rating2.value,
-            date:newdate,}
+            date_modified:newdate,}
 
             newSelfCare = [...newSelfCare, newSelfCare2]
             //console.log(`2nd ran ${newSelfCare[1].content}`)
@@ -163,7 +163,7 @@ handleSubmit = e =>{
             content:activity3.value,
             type:type3.value,
             rating:rating3.value,
-            date:newdate,}
+            date_modified:newdate,}
             newSelfCare = [...newSelfCare, newSelfCare3]
         };
         this.context.addSelfCare(newSelfCare);
@@ -178,7 +178,7 @@ handleSubmit = e =>{
             id:newid,
             user_id:newuser_id,
             content:gratitude1.value,
-            date:newdate,
+            date_modified:newdate,
             }]
         console.log(`nsc from form ${newGratitude[0].content}`)
         if(gratitude2.value){
@@ -186,7 +186,7 @@ handleSubmit = e =>{
                 id:newid,
                 user_id:newuser_id,
                 content:gratitude2.value,
-                date:newdate,
+                date_modified:newdate,
                 }
             newGratitude = [...newGratitude, newGratitude2]
             console.log(`2nd ran ${newGratitude[1].content}`)
@@ -196,7 +196,7 @@ handleSubmit = e =>{
                 id:newid,
                 user_id:newuser_id,
                 content:gratitude3.value,
-                date:newdate,
+                date_modified:newdate,
                 }
             newGratitude = [...newGratitude, newGratitude3]
         };
@@ -204,27 +204,18 @@ handleSubmit = e =>{
         console.log(`this is the nG being sent ${newGratitude[0].content}`);
    };
 
-    //add mood
-    if(mood.value){
-        const newMood = [{
+    //add energy and mood
+    if(energy.value && mood.value){
+        const newMoods = [{
             id:newid,
             user_id:newuser_id,
+            energy_level:energy.value,
             mood_level:mood.value,
-            date:newdate,
-            }]
-        this.context.addMood(newMood);
-    };
-
-    //add energy
-    if(energy.value){
-        const newEnergy = [{
-            id:newid,
-            user_id:newuser_id,
-            energy_level:mood.value,
-            date:newdate,
-            }]
-        this.context.addEnergy(newEnergy);
-    };
+            date_modified:newdate,
+        }]
+        this.context.addMoods(newMoods);
+    }
+    
   this.props.history.push('/dashboard');
 }//end of handleSubmit
 

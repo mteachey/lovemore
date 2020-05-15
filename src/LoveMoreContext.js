@@ -6,10 +6,10 @@ const LoveMoreContext = React.createContext({
       goals:{},
       inspiration:[],
       quotes:[],
+      moods:[],
       addSelfCare:()=>{},
       addGratitude:()=>{},
-      addEnergy:()=>{},
-      addMood:()=>{},
+      addMoods:()=>{},
       updateGoals:()=>{}
      
 })

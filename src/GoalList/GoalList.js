@@ -14,10 +14,9 @@ class GoalList extends Component{
         //removing any empty values from being displayed
         let newObj = Object.entries(goalsObj).reduce(
             (newObj, [key, value])=>
-            value === "" ? newObj : {...newObj, [key]:value}, {}
+            (value === "" || key === 'id' || key === 'user_id') ? newObj : {...newObj, [key]:value}, {}
             );
 
-        console.log(`this is the ${Object.entries(newObj)}`)
         return(
             <section className="goals">
                 <header>
