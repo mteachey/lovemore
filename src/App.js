@@ -12,6 +12,7 @@ import Nav from './Nav/Nav.js';
 import Footer from './Footer/Footer.js'
 import LoveMoreContext from './LoveMoreContext.js';
 import data from './data.js'
+import config from './config.js'
 
 
 class App extends Component{
@@ -25,6 +26,7 @@ class App extends Component{
       quotes:data.quotes,
       mood:data.mood,
       energy:data.energy,
+      error:null,
     }
   }
  
@@ -64,6 +66,127 @@ updateGoals=(newgoals)=>{
     goals:newgoals
   },()=>{console.log(this.state.goals)})
 }
+
+componentDidMount(){
+  this.setState({ error : null })
+  //getting gratitudes
+  fetch(`${config.API_DEV_ENDPOINT}api/gratitudes`,{
+    method:'GET',
+    headers:{
+      'content-type': 'application/json',
+      'Authorization': `Bearer ${config.API_KEY}`
+    },
+  })
+  .then(res=>{
+    if(!res.ok){
+      throw new Error('Something went wrong, please try again later');
+    }
+    return res.json()
+  })
+  .then(data=>{
+    this.setState({
+      gratitude:data,
+     });
+  })
+  .catch(err => {
+    this.setState({
+      error: err.message
+    });
+  })
+  fetch(`${config.API_DEV_ENDPOINT}api/selfcares`,{
+    method:'GET',
+    headers:{
+      'content-type': 'application/json',
+      'Authorization': `Bearer ${config.API_KEY}`
+    },
+  })
+  .then(res=>{
+    if(!res.ok){
+      throw new Error('Something went wrong, please try again later');
+    }
+    return res.json()
+  })
+  .then(data=>{
+    this.setState({
+      selfcare:data,
+     });
+  })
+  .catch(err => {
+    this.setState({
+      error: err.message
+    });
+  })
+  fetch(`${config.API_DEV_ENDPOINT}api/inspires`,{
+    method:'GET',
+    headers:{
+      'content-type': 'application/json',
+      'Authorization': `Bearer ${config.API_KEY}`
+    },
+  })
+  .then(res=>{
+    if(!res.ok){
+      throw new Error('Something went wrong, please try again later');
+    }
+    return res.json()
+  })
+  .then(data=>{
+    this.setState({
+      inspiration:data,
+     });
+  })
+  .catch(err => {
+    this.setState({
+      error: err.message
+    });
+  })
+  fetch(`${config.API_DEV_ENDPOINT}api/quotes`,{
+    method:'GET',
+    headers:{
+      'content-type': 'application/json',
+      'Authorization': `Bearer ${config.API_KEY}`
+    },
+  })
+  .then(res=>{
+    if(!res.ok){
+      throw new Error('Something went wrong, please try again later');
+    }
+    return res.json()
+  })
+  .then(data=>{
+    this.setState({
+      quotes:data,
+     });
+  })
+  .catch(err => {
+    this.setState({
+      error: err.message
+    });
+  })
+  fetch(`${config.API_DEV_ENDPOINT}api/goals`,{
+    method:'GET',
+    headers:{
+      'content-type': 'application/json',
+      'Authorization': `Bearer ${config.API_KEY}`
+    },
+  })
+  .then(res=>{
+    if(!res.ok){
+      throw new Error('Something went wrong, please try again later');
+    }
+    return res.json()
+  })
+  .then(data=>{
+    console.log(data)
+    /*this.setState({
+      quotes:data,
+     });*/
+  })
+  .catch(err => {
+    this.setState({
+      error: err.message
+    });
+  })
+}//end of cDM
 
 
   render(){

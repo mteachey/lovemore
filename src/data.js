@@ -46,13 +46,13 @@ export default {
         {
             "gratitude_id":"1",
             "user_id":"1",
-            "content":"I kept my cool with the service phone rep",
+            "content":"A catch up phone call with Kelsie",
             "date":"May 7th 2020"           
         },
         {
             "gratitude_id":"2",
             "user_id":"1",
-            "content":"A catch up phone call with Kelsie",
+            "content":"I kept my cool with the service phone rep",
             "date":"May 7th 2020"           
         },
         {
