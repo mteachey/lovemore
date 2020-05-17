@@ -13,11 +13,13 @@ class PastGratitude extends Component{
                     <h1>Your Gratitude Entries</h1>
                 </header>
                 <main>
+    
                     <FilterSortRow  
-                      filterOptions = {'date-only'}                  
+                      filterOptions = {'date-only'}  
+                      pageType={'gratitudes'}                
                      />
                     <EntryList
-                     typeOfResults = {'Gratitude'}
+                     typeOfResults = {'gratitudes'}
                      results ={this.context.gratitude}
                     />                   
                 </main>

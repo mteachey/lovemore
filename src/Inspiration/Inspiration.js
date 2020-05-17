@@ -15,10 +15,11 @@ class Inspiration extends Component{
                 <main>
                     <RandomQuote/>
                     <FilterSortRow
-                       filterOptions = {'type-only'}    
+                       filterOptions = {'type-only'}  
+                       pageType={'inspiration'}     
                      />
                     <EntryList
-                     typeOfResults = {'Inspiration'}
+                     typeOfResults = {'inspiration'}
                      results ={this.context.inspiration}
                     />                   
                 </main>

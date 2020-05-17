@@ -19,7 +19,7 @@ class MostRecent extends Component{
                        random = {false} />
                     <ActivityList
                        typePage={'gratitude'}
-                       list = {this.context.gratitude}
+                       list = {this.context.gratitude_most_recent}
                        listHeading = {`Some of Your Past Gratitudes`} 
                        random = {true}/>
                 </main>

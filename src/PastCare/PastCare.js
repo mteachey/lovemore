@@ -14,9 +14,10 @@ class PastCare extends Component{
                 <main>
                     <FilterSortRow
                         filterOptions = {'all'}    
+                        pageType={'selfcares'} 
                      />
                     <EntryList
-                     typeOfResults = {'Self-Care'}
+                     typeOfResults = {'selfcares'}
                      results ={this.context.selfcare}
                     />                   
                 </main>

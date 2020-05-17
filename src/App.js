@@ -13,6 +13,8 @@ import Footer from './Footer/Footer.js'
 import LoveMoreContext from './LoveMoreContext.js';
 import data from './data.js'
 import config from './config.js'
+//import { format, parseISO } from 'date-fns';
+//import toDate from 'date-fns/toDate'
 
 
 class App extends Component{
@@ -21,13 +23,46 @@ class App extends Component{
     this.state={
       selfcare:data.selfcare,
       gratitude:data.gratitude,
+      gratitude_most_recent:data.gratitude,
       goals:data.goals,
       inspiration:data.inspiration,
       quotes:data.quotes,
       moods:data.moods,
       error:null,
-    }
+      current_gratitude_results_page:1,
+      current_selfcares_results_page:1,
+      current_display:{
+        gratitudes:{page:1, date_to:'all', date_from:''},
+        selfcares :{page:1, date_to:'all', date_from:'', type:'all',rating:'all'},
+        inspiration:{page:1, type:'all'}
+      }
+    }//end of state 
   }
+
+updateCurrentPage=(typeOfPage)=>{
+  let newPage = this.state.current_display[typeOfPage].page + 1;
+  console.log(`updateCP ran this is new page ${newPage}`)
+  this.setState({
+    current_display:{...this.state.current_display,current_display:{[typeOfPage] : { page:newPage}}}
+  })
+}
+
+updateTypeSelected=(typeOfPage,selectedType)=>{
+  console.log(`updateTS ran this is the page ${selectedType}`)
+  this.setState({
+   // current_display:{typeOfPage:{type:selectedType}}
+    current_display:{...this.state.current_display, current_display:{[typeOfPage]:{type:selectedType}}}
+   //current_display:{...this.state.current_display, current_display:{[typeOfPage] : { type:selectedType}}}
+     //current_display:{...this.state.current_display, current_display:{selfcares:{type:'spiritual'}}}
+     
+  })
+}
+
+updateDateSelected=()=>{
+
+}
+
+updateRating=()=>{}
  
 addSelfCare=(newSelfCare)=>{
   this.setState({
@@ -43,7 +78,6 @@ addGratitude=(newGratitude)=>{
       console.log(`this is the newG length ${this.state.gratitude.length}`)
     }
   )
-  
 };
 
 addMoods=(newMoods)=>{
@@ -72,6 +106,51 @@ updateGoals=(newgoals)=>{
   },()=>{console.log(this.state.goals)})
 }
 
+FormatDate = obj =>{
+ 
+ let year = obj.date_modified.slice(0,4);
+ let month = obj.date_modified.slice(5,7);
+ let day = obj.date_modified.slice(8,10);
+ if(month === '01'){
+   month = 'Jan'
+ }
+ if(month === '02'){
+  month = 'Feb'
+}
+if(month === '03'){
+  month = 'Mar'
+}
+if(month === '04'){
+  month = 'Apr'
+}
+if(month === '05'){
+  month = 'May'
+}
+if(month === '06'){
+  month = 'Jun'
+}
+if(month === '07'){
+  month = 'Jul'
+}
+if(month === '08'){
+  month = 'Aug'
+}
+if(month === '09'){
+  month = 'Sep'
+}if(month === '10'){
+  month = 'Oct'
+}
+if(month === '11'){
+  month = 'Nov'
+}
+if(month === '12'){
+  month = 'Dec'
+}
+let newDate = `${month} ${day} ${year}`;
+let newObj = obj = {...obj, date_modified:newDate}
+return newObj
+}
+
 componentDidMount(){
   this.setState({ error : null })
   //getting gratitudes
@@ -89,8 +168,12 @@ componentDidMount(){
     return res.json()
   })
   .then(data=>{
+    let formatedDateData = data.map(obj=>this.FormatDate(obj));
     this.setState({
-      gratitude:data,
+      gratitude_most_recent:formatedDateData,
+    });
+    this.setState({
+      gratitude:formatedDateData,
      });
   })
   .catch(err => {
@@ -112,8 +195,9 @@ componentDidMount(){
     return res.json()
   })
   .then(data=>{
+   let formatedDateData = data.map(obj=>this.FormatDate(obj));
     this.setState({
-      selfcare:data,
+      selfcare:formatedDateData,
      });
   })
   .catch(err => {
@@ -181,7 +265,6 @@ componentDidMount(){
     return res.json()
   })
   .then(data=>{
-    console.log(data[0])
     let lastEntry = data.length
     this.setState({
       goals:data[lastEntry-1],
@@ -206,9 +289,9 @@ componentDidMount(){
     return res.json()
   })
   .then(data=>{
-
+    let formatedDateData = data.map(obj=>this.FormatDate(obj));
     this.setState({
-      moods:data,
+      moods:formatedDateData,
      });
   })
   .catch(err => {
@@ -223,6 +306,7 @@ componentDidMount(){
     const contextValue = {
       selfcare:this.state.selfcare,
       gratitude:this.state.gratitude,
+      gratitude_most_recent:this.state.gratitude_most_recent,
       goals:this.state.goals,
       moods:this.state.moods,
       inspiration:this.state.inspiration,
@@ -231,6 +315,9 @@ componentDidMount(){
       addGratitude:this.addGratitude,
       addMoods:this.addMoods,
       updateGoals:this.updateGoals,
+      updateCurrentPage:this.updateCurrentPage,
+      current_display:this.state.current_display,
+      updateTypeSelected:this.updateTypeSelected,
       }
     return(
       <div className="App">

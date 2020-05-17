@@ -1,37 +1,62 @@
 import React, { Component } from 'react'; 
 import LoveMoreContext from '../LoveMoreContext'
-import './FilterSortRow.css'
+import './FilterSortRow.css';
+//import config from '../config.js'
 
 class FilterSortRow extends Component{
     static contextType = LoveMoreContext;
+
+     nextPage=()=>{
+        console.log(`nextpage ran`)
+        this.context.updateCurrentPage(this.props.pageType)
+     }
+
+     updateType=(typeSelected)=>{
+        this.context.updateTypeSelected(this.props.pageType, typeSelected);
+        //updatePageResults(type, this.props.pageType)
+        console.log(`updateType ran ${typeSelected}`)
+     }
+
     render(){
         let filter = '';
         if(this.props.filterOptions==='date-only'){
             filter = (
-             <form className="filter-sort-control">
+             <form className="filter-sort-control" onSubmit={e => this.handleSubmitDate(e)}>
                 <div>
                     <label htmlFor="search-date">Search For a Date</label>
-                    <input id="search-date" name="search-date" type="date"/>
+                    <input id="search_date" name="search_date" type="date"/>
                 </div>
+                <button type="submit">Search</button>
             </form>
             )
         }
+        else if(this.props.filterOptions==='next20-only'){
+            filter =  (
+            
+                <div>
+                 <button onClick={e => this.nextPage()}>Next 20</button>
+                </div>
+            
+            )}
         else if(this.props.filterOptions==='type-only'){
             filter =  (
-            <form className="filter-sort-control">
                 <div>
                 <label htmlFor="type_filter">Filter by Type</label>                    
-                    <select id="type_filter">
+                    <select id="type_filter"
+                    onChange={e=>this.updateType(e.target.value)}
+                    >
                         <option value="emotional">emotional</option>
                         <option value="spiritual">spiritual</option>
                         <option value="physical">physical</option>
                         <option value="intellectual">intellectual</option>
                     </select>
                 </div>
-            </form>
             )}
         else if(this.props.filterOptions==='all')
             {  filter = (
+                <div>
+                <button  onClick={e => this.nextPage()}>Next 20</button>
+               
                 <form className="filter-sort-control">
                     <div>
                         <label htmlFor="search-date">Search For a Date</label>
@@ -46,7 +71,9 @@ class FilterSortRow extends Component{
                     </div>
                     <div>
                     <label htmlFor="type_filter">Filter by Type</label>                    
-                        <select id="type_filter">
+                        <select id="type_filter"
+                        onChange={e=>this.updateType(e.target.value)}
+                        >
                             <option value="emotional">emotional</option>
                             <option value="spiritual">spiritual</option>
                             <option value="physical">physical</option>
@@ -63,7 +90,8 @@ class FilterSortRow extends Component{
                             <option value="5">5</option>
                         </select>
                     </div>
-                </form>)
+                </form>
+                </div>)
             }
     
         return(    

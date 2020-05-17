@@ -15,7 +15,8 @@ class ActivityList extends Component{
             linkURL = '/past-gratitude'
            }
        
-        let results = this.props.list
+        let results = this.props.list;
+        let topThree = [ results[0], results[1], results[2]];
         /*if(this.props.typePage ==='activity')
         {   const newIndex = results.length - 1;
             console.log(`these are the results ${results[newIndex].content}`)}*/
@@ -25,7 +26,7 @@ class ActivityList extends Component{
                 <Link className="button-link" to={linkURL}>See All</Link>
                     <ul className="recent-activities-list">
                          <li>{this.props.listHeading}</li>
-                        {results.map((entry,i)=> 
+                        {topThree.map((entry,i)=> 
                             <li key={i} className="recent-activities-item"><span>{entry.content}</span><span>{entry.date_modified}</span></li>)}                        
                     </ul>
             </section>
