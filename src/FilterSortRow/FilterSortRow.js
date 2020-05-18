@@ -6,10 +6,11 @@ import './FilterSortRow.css';
 class FilterSortRow extends Component{
     static contextType = LoveMoreContext;
 
-     nextPage=()=>{
-        console.log(`nextpage ran`)
-        this.context.updateCurrentPage(this.props.pageType)
+     nextPage=(direction)=>{
+        console.log(`nextpage ran ${direction}`)
+        this.context.updateCurrentPage(this.props.pageType, direction)
      }
+
 
      updateType=(typeSelected)=>{
         this.context.updateTypeSelected(this.props.pageType, typeSelected);
@@ -34,7 +35,9 @@ class FilterSortRow extends Component{
             filter =  (
             
                 <div>
-                 <button onClick={e => this.nextPage()}>Next 20</button>
+                 <button onClick={e => this.nextPage('forward')}>Next 20</button>
+                 <button onClick = {e =>this.nextPage('back')}>Back</button>
+                 <button onClick = {e =>this.nextPage('reset')}>Reset</button>
                 </div>
             
             )}
@@ -55,7 +58,9 @@ class FilterSortRow extends Component{
         else if(this.props.filterOptions==='all')
             {  filter = (
                 <div>
-                <button  onClick={e => this.nextPage()}>Next 20</button>
+                <button  onClick={e => this.nextPage('forward')}>Next 20</button>
+                <button onClick = {e =>this.nextPage('back')}>Back</button>
+                <button onClick = {e =>this.nextPage('reset')}>Reset</button>
                
                 <form className="filter-sort-control">
                     <div>

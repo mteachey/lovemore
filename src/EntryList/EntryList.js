@@ -25,7 +25,7 @@ class EntryList extends Component{
        }
        
        //pagination of results
-       /* let numberOfResults=results.length;
+       let numberOfResults=results.length;
         console.log(`this is the page ${page}`);
         let arrayStart = ((page - 1)*20);
         console.log(arrayStart);
@@ -44,7 +44,7 @@ class EntryList extends Component{
                 pageCurrentPageResults = [...pageCurrentPageResults, resultsObj]
             }
         }
-        results = pageCurrentPageResults;*/
+        results = pageCurrentPageResults;
         
         return(
             <section className="results-list">

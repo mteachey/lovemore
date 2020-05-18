@@ -39,23 +39,25 @@ class App extends Component{
     }//end of state 
   }
 
-updateCurrentPage=(typeOfPage)=>{
-  let newPage = this.state.current_display[typeOfPage].page + 1;
-  console.log(`updateCP ran this is new page ${newPage}`)
-  this.setState({
-    current_display:{...this.state.current_display,current_display:{[typeOfPage] : { page:newPage}}}
-  })
+updateCurrentPage=(typeOfPage, direction)=>{
+  let newPage = this.state.current_display[typeOfPage].page;
+  if(direction === 'forward')
+  {newPage = this.state.current_display[typeOfPage].page + 1;}
+  if(direction === 'back')
+  {newPage = this.state.current_display[typeOfPage].page - 1;}
+  if(direction === 'reset')
+  {newPage = 1;}
+
+  const {current_display} = this.state;
+  current_display[typeOfPage].page = newPage;
+  this.setState({current_display:current_display})
 }
 
 updateTypeSelected=(typeOfPage,selectedType)=>{
   console.log(`updateTS ran this is the page ${selectedType}`)
-  this.setState({
-   // current_display:{typeOfPage:{type:selectedType}}
-    current_display:{...this.state.current_display, current_display:{[typeOfPage]:{type:selectedType}}}
-   //current_display:{...this.state.current_display, current_display:{[typeOfPage] : { type:selectedType}}}
-     //current_display:{...this.state.current_display, current_display:{selfcares:{type:'spiritual'}}}
-     
-  })
+  const {current_display} = this.state;
+  current_display[typeOfPage].type = selectedType;
+  this.setState({current_display:current_display})
 }
 
 updateDateSelected=()=>{
