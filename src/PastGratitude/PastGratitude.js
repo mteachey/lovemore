@@ -20,7 +20,7 @@ class PastGratitude extends Component{
                      />
                     <EntryList
                      typeOfResults = {'gratitudes'}
-                     results ={this.context.gratitude}
+                     results ={this.context.gratitudes}
                     />                   
                 </main>
 

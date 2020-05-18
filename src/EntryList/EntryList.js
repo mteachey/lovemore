@@ -10,27 +10,32 @@ class EntryList extends Component{
         let { results, typeOfResults} = this.props;
         let page = this.context.current_display[typeOfResults].page;
         let selectedType = this.context.current_display[typeOfResults].type;
-        //console.log(`this is the current selectedType ${this.context.current_display[typeOfResults]}`);
-        console.log(`this is the sT ${selectedType}`);
-       
-       // let date_to = this.context.current_display[typeOfResults].date_to;
-       // let date_from = this.context.current_display[typeOfResults].date_from;
+        let selectedDate = this.context.current_display[typeOfResults].date_to;
+        let selectedRating = this.context.current_display[typeOfResults].rating;
 
        //filters for type selected
-      if(selectedType !== 'all' && selectedType){
-          
+      if(selectedType !== 'all' && selectedType){         
            results = results.filter(result=>
-            result.type.includes(selectedType))
-           
+            result.type.includes(selectedType))         
        }
+       //filter for date
+      if(selectedDate !== 'all' && selectedDate){         
+        results = results.filter(result=>
+         result.date_modified.includes(selectedDate))         
+        }
+        //filter for rating
+      if(selectedRating !== 'all' && selectedRating){         
+        
+        results = results.filter(result=>
+           (result.rating).toString().includes(selectedRating.toString())   
+        )        
+        }
        
        //pagination of results
        let numberOfResults=results.length;
-        console.log(`this is the page ${page}`);
         let arrayStart = ((page - 1)*20);
-        console.log(arrayStart);
         let arrayEnd = (arrayStart + 20);
-        let pageCurrentPageResults = []
+        let pageCurrentPageResults = [];
   
         if(arrayEnd <= numberOfResults){
             for (let i=arrayStart;i<arrayEnd; i++){
@@ -44,6 +49,8 @@ class EntryList extends Component{
                 pageCurrentPageResults = [...pageCurrentPageResults, resultsObj]
             }
         }
+        
+
         results = pageCurrentPageResults;
         
         return(

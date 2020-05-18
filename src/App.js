@@ -21,8 +21,8 @@ class App extends Component{
   constructor(props){
     super(props);
     this.state={
-      selfcare:data.selfcare,
-      gratitude:data.gratitude,
+      selfcares:data.selfcare,
+      gratitudes:data.gratitude,
       gratitude_most_recent:data.gratitude,
       goals:data.goals,
       inspiration:data.inspiration,
@@ -32,9 +32,9 @@ class App extends Component{
       current_gratitude_results_page:1,
       current_selfcares_results_page:1,
       current_display:{
-        gratitudes:{page:1, date_to:'all', date_from:''},
-        selfcares :{page:1, date_to:'all', date_from:'', type:'all',rating:'all'},
-        inspiration:{page:1, type:'all'}
+        gratitudes:{page:1, date_to:'all', date_from:'', disabled:'start'},
+        selfcares :{page:1, date_to:'all', date_from:'', type:'all',rating:'all',disabled:'start'},
+        inspiration:{page:1, type:'all',disabled:'start'}
       }
     }//end of state 
   }
@@ -43,9 +43,9 @@ updateCurrentPage=(typeOfPage, direction)=>{
   let newPage = this.state.current_display[typeOfPage].page;
   if(direction === 'forward')
   {newPage = this.state.current_display[typeOfPage].page + 1;}
-  if(direction === 'back')
+  else if(direction === 'back')
   {newPage = this.state.current_display[typeOfPage].page - 1;}
-  if(direction === 'reset')
+  else if(direction === 'reset')
   {newPage = 1;}
 
   const {current_display} = this.state;
@@ -60,24 +60,39 @@ updateTypeSelected=(typeOfPage,selectedType)=>{
   this.setState({current_display:current_display})
 }
 
-updateDateSelected=()=>{
+updateDisabled=(typeOfPage, direction)=>{
+  console.log(`updateDisable ran ${typeOfPage} ${direction}`)
+  const {current_display} = this.state;
 
+  current_display[typeOfPage].disabled = direction;
+  this.setState({current_display:current_display})
 }
 
-updateRating=()=>{}
+updateDateSelected=(typeOfPage, date)=>{
+  const {current_display} = this.state;
+  current_display[typeOfPage].date_to = date;
+  this.setState({current_display:current_display})
+}
+
+updateRatingSelected=(typeOfPage, ratingSelected)=>{
+  const {current_display} = this.state;
+  current_display[typeOfPage].rating = ratingSelected;
+  this.setState({current_display:current_display});
+  console.log(`uRS ran`);
+}
  
 addSelfCare=(newSelfCare)=>{
   this.setState({
-    selfcare: [...this.state.selfcare, ...newSelfCare]
-    },()=>{console.log(`this is the value from addSelfCare length ${this.state.selfcare.length} obj ${this.state.selfcare[this.state.selfcare.length-1].content}`)
+    selfcares: [...this.state.selfcares, ...newSelfCare]
+    },()=>{console.log(`this is the value from addSelfCare length ${this.state.selfcares.length} obj ${this.state.selfcares[this.state.selfcares.length-1].content}`)
   })  
 };
 
 addGratitude=(newGratitude)=>{
-  console.log(`this is the OG length ${this.state.gratitude.length}`)
+  console.log(`this is the OG length ${this.state.gratitudes.length}`)
   this.setState({
-    gratitude: [...this.state.gratitude, ...newGratitude]},()=>{
-      console.log(`this is the newG length ${this.state.gratitude.length}`)
+    gratitudes: [...this.state.gratitudes, ...newGratitude]},()=>{
+      console.log(`this is the newG length ${this.state.gratitudes.length}`)
     }
   )
 };
@@ -149,7 +164,7 @@ if(month === '12'){
   month = 'Dec'
 }
 let newDate = `${month} ${day} ${year}`;
-let newObj = obj = {...obj, date_modified:newDate}
+let newObj = obj = {...obj, date_formatted:newDate}
 return newObj
 }
 
@@ -175,7 +190,7 @@ componentDidMount(){
       gratitude_most_recent:formatedDateData,
     });
     this.setState({
-      gratitude:formatedDateData,
+      gratitudes:formatedDateData,
      });
   })
   .catch(err => {
@@ -199,7 +214,7 @@ componentDidMount(){
   .then(data=>{
    let formatedDateData = data.map(obj=>this.FormatDate(obj));
     this.setState({
-      selfcare:formatedDateData,
+      selfcares:formatedDateData,
      });
   })
   .catch(err => {
@@ -306,8 +321,8 @@ componentDidMount(){
 
   render(){
     const contextValue = {
-      selfcare:this.state.selfcare,
-      gratitude:this.state.gratitude,
+      selfcares:this.state.selfcares,
+      gratitudes:this.state.gratitudes,
       gratitude_most_recent:this.state.gratitude_most_recent,
       goals:this.state.goals,
       moods:this.state.moods,
@@ -318,8 +333,11 @@ componentDidMount(){
       addMoods:this.addMoods,
       updateGoals:this.updateGoals,
       updateCurrentPage:this.updateCurrentPage,
+      updateDateSelected:this.updateDateSelected,
+      updateRatingSelected:this.updateRatingSelected,
       current_display:this.state.current_display,
       updateTypeSelected:this.updateTypeSelected,
+      updateDisabled:this.updateDisabled,
       }
     return(
       <div className="App">

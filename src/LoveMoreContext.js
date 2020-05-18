@@ -1,8 +1,8 @@
 import React from 'react';
 
 const LoveMoreContext = React.createContext({
-      selfcare:[],
-      gratitude:[],
+      selfcares:[],
+      gratitudes:[],
       gratitude_most_recent:[],
       goals:{},
       inspiration:[],
@@ -16,7 +16,10 @@ const LoveMoreContext = React.createContext({
       updateGoals:()=>{},
       updateCurrentPage:()=>{},
       current_display:{},
-      updateTypeSelected:()=>{}
+      updateTypeSelected:()=>{},
+      updateDateSelected:()=>{},
+      updateDisabled:()=>{},
+      updateRatingSelected:()=>{},
      
 })
 
