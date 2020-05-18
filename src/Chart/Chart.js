@@ -15,7 +15,7 @@ calculateTypeProgress=()=>{
     let progressPhysical = 0;
     let progressSpiritual = 0;
 
-    this.context.selfcare.forEach(obj=>{
+    this.context.selfcares.forEach(obj=>{
         if(obj.type==="intellectual"){
             progressIntellectual = progressIntellectual+1
         }

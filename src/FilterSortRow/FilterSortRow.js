@@ -58,6 +58,7 @@ class FilterSortRow extends Component{
                     <select id="type_filter"
                     onChange={e=>this.updateType(e.target.value)}
                     >
+                        <option value="all">all</option>
                         <option value="emotional">emotional</option>
                         <option value="spiritual">spiritual</option>
                         <option value="physical">physical</option>
@@ -83,6 +84,7 @@ class FilterSortRow extends Component{
                         <select id="type_filter"
                         onChange={e=>this.updateType(e.target.value)}
                         >
+                            <option value="all">all</option>
                             <option value="emotional">emotional</option>
                             <option value="spiritual">spiritual</option>
                             <option value="physical">physical</option>

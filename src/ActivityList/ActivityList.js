@@ -17,9 +17,6 @@ class ActivityList extends Component{
        
         let results = this.props.list;
         let topThree = [ results[0], results[1], results[2]];
-        /*if(this.props.typePage ==='activity')
-        {   const newIndex = results.length - 1;
-            console.log(`these are the results ${results[newIndex].content}`)}*/
         
         return(
             <section className="recent-activities">
@@ -27,7 +24,7 @@ class ActivityList extends Component{
                     <ul className="recent-activities-list">
                          <li>{this.props.listHeading}</li>
                         {topThree.map((entry,i)=> 
-                            <li key={i} className="recent-activities-item"><span>{entry.content}</span><span>{entry.date_modified}</span></li>)}                        
+                            <li key={i} className="recent-activities-item"><span>{entry.content}</span><span>{entry.date_formatted}</span></li>)}                        
                     </ul>
             </section>
         )

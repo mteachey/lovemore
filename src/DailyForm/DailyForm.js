@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './DailyForm.css';
 import ValidationError from '../ValidationError/ValidationError.js'
 import LoveMoreContext from '../LoveMoreContext.js'
+import config from '../config.js'
 
 class DailyForm extends Component{
 
@@ -70,6 +71,7 @@ constructor(props){
             value:"",
             touched:false
         },
+        error:null,
     };
 }
 
@@ -126,95 +128,152 @@ handleSubmit = e =>{
     e.preventDefault();
     const { gratitude1, gratitude2, gratitude3, activity1, activity2, activity3, type1, type2, type3, rating1, rating2, rating3, mood, energy } = this.state;
     //for now all entries will get same user_id, id, and date
-    const newid = "10";
-    const newuser_id = "3";
+    //const newid = "10";
+    const newuser_id = "2";
     //this will be based on the date input
-    const newdate = "May 3rd 2020";
+    //const newdate = "May 3rd 2020";
 
     
     //add selfcare
-    //let newSelfCare=[];
+    let newSelfCare=[];
     if(activity1.value){
-         let   newSelfCare = [{
-                id:newid,
+         newSelfCare = [{
+               // id:newid,
                 user_id:newuser_id,
                 content:activity1.value,
                 type:type1.value,
                 rating:rating1.value,
-                date_modified:newdate,
+               // date_modified:newdate,
             }]
       //  console.log(`nsc from form ${newSelfCare[0].content}`)
         if(activity2.value)
         { const newSelfCare2 = {
-            id:newid,
+          //  id:newid,
             user_id:newuser_id,
             content:activity2.value,
             type:type2.value,
             rating:rating2.value,
-            date_modified:newdate,}
+          //  date_modified:newdate,
+        }
 
             newSelfCare = [...newSelfCare, newSelfCare2]
             //console.log(`2nd ran ${newSelfCare[1].content}`)
         };
         if(activity3.value)
         { const newSelfCare3 = {
-            id:newid,
+           // id:newid,
             user_id:newuser_id,
             content:activity3.value,
             type:type3.value,
             rating:rating3.value,
-            date_modified:newdate,}
+           // date_modified:newdate,
+        }
             newSelfCare = [...newSelfCare, newSelfCare3]
         };
-        this.context.addSelfCare(newSelfCare);
-        //console.log(`this is the nsc being sent to update ${newSelfCare.length}`);
-       
    };
 
     //add gratitude
-    
+    let newGratitude=[]
     if(gratitude1.value){
-        let newGratitude = [{
-            id:newid,
+        newGratitude = [{
+            //id:newid,
             user_id:newuser_id,
             content:gratitude1.value,
-            date_modified:newdate,
+           // date_modified:newdate,
             }]
-        console.log(`nsc from form ${newGratitude[0].content}`)
         if(gratitude2.value){
             const newGratitude2 = {
-                id:newid,
+               // id:newid,
                 user_id:newuser_id,
                 content:gratitude2.value,
-                date_modified:newdate,
+                //date_modified:newdate,
                 }
             newGratitude = [...newGratitude, newGratitude2]
-            console.log(`2nd ran ${newGratitude[1].content}`)
         };
         if(gratitude3.value){
             const newGratitude3 = {
-                id:newid,
+             //   id:newid,
                 user_id:newuser_id,
                 content:gratitude3.value,
-                date_modified:newdate,
+             //   date_modified:newdate,
                 }
             newGratitude = [...newGratitude, newGratitude3]
         };
-        this.context.addGratitude(newGratitude);
-        console.log(`this is the nG being sent ${newGratitude[0].content}`);
+       // this.context.addGratitude(newGratitude);
+       // console.log(`this is the nG being sent ${newGratitude[0].content}`);
    };
 
     //add energy and mood
     if(energy.value && mood.value){
         const newMoods = [{
-            id:newid,
+           // id:newid,
             user_id:newuser_id,
             energy_level:energy.value,
             mood_level:mood.value,
-            date_modified:newdate,
+           // date_modified:newdate,
         }]
-        this.context.addMoods(newMoods);
+       // this.context.addMoods(newMoods);
     }
+    console.log(newGratitude)
+if(newGratitude.length !== 0){
+  fetch(`${config.API_DEV_ENDPOINT}api/gratitudes`,{
+        method: 'POST',
+        body: JSON.stringify(newGratitude),
+         headers: {
+         'content-type': 'application/json',
+         'Authorization': `Bearer ${config.API_KEY}`
+        },
+    })
+      .then(res => {
+        if (!res.ok) {
+          // get the error message from the response,
+          return res.json().then(error => {
+            // then throw it
+            throw error
+          })
+        }
+        return res.json()
+      })
+      .then(data => {
+          console.log(data)
+         /* this.state.gratitude1.value = '';
+          this.state.gratitude2.value = '';
+          this.state.gratitude3.value = '';*/
+
+        this.context.addGratitude(data);
+      })
+      .catch(error => {
+        this.setState({ error })
+      })
+    }//end of newGratitude
+
+    if(newSelfCare.length !== 0){
+      fetch(`${config.API_DEV_ENDPOINT}api/selfcares`,{
+        method: 'POST',
+        body: JSON.stringify(newSelfCare),
+         headers: {
+         'content-type': 'application/json',
+         'Authorization': `Bearer ${config.API_KEY}`
+        },
+    })
+      .then(res => {
+        if (!res.ok) {
+          // get the error message from the response,
+          return res.json().then(error => {
+            // then throw it
+            throw error
+          })
+        }
+        return res.json()
+      })
+      .then(data => {
+          console.log(data)
+         this.context.addSelfCare(newSelfCare);
+      })
+      .catch(error => {
+        this.setState({ error })
+      })
+    }//end if newSC
     
   this.props.history.push('/dashboard');
 }//end of handleSubmit

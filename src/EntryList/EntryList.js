@@ -7,7 +7,8 @@ class EntryList extends Component{
     static contextType = LoveMoreContext;
 
     render(){
-        let { results, typeOfResults} = this.props;
+        let {typeOfResults} = this.props;
+        let results = this.context[typeOfResults];
         let page = this.context.current_display[typeOfResults].page;
         let selectedType = this.context.current_display[typeOfResults].type;
         let selectedDate = this.context.current_display[typeOfResults].date_to;
@@ -25,14 +26,14 @@ class EntryList extends Component{
         }
         //filter for rating
       if(selectedRating !== 'all' && selectedRating){         
-        
         results = results.filter(result=>
            (result.rating).toString().includes(selectedRating.toString())   
         )        
-        }
+      }
        
        //pagination of results
        let numberOfResults=results.length;
+       console.log(numberOfResults);
         let arrayStart = ((page - 1)*20);
         let arrayEnd = (arrayStart + 20);
         let pageCurrentPageResults = [];

@@ -18,7 +18,6 @@ class PastCare extends Component{
                      />
                     <EntryList
                      typeOfResults = {'selfcares'}
-                     results ={this.context.selfcares}
                     />                   
                 </main>
 

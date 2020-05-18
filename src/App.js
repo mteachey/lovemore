@@ -13,8 +13,6 @@ import Footer from './Footer/Footer.js'
 import LoveMoreContext from './LoveMoreContext.js';
 import data from './data.js'
 import config from './config.js'
-//import { format, parseISO } from 'date-fns';
-//import toDate from 'date-fns/toDate'
 
 
 class App extends Component{
@@ -101,20 +99,6 @@ addMoods=(newMoods)=>{
   this.setState({
     moods:[...this.state.moods, newMoods]
   })
-}
-
-addMood=(newMood)=>{
-  console.log(this.state.mood.length)
-  this.setState({
-    mood: [...this.state.mood, newMood]
-  },()=>{console.log(this.state.mood.length)})
-}
-
-addEnergy=(newEnergy)=>{
-  console.log(this.state.energy.length)
-  this.setState({
-    energy: [...this.state.energy, newEnergy]
-  },()=>{console.log(this.state.energy.length)})
 }
 
 updateGoals=(newgoals)=>{
