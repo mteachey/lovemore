@@ -6,7 +6,7 @@ export default {
             "content":"Did 15 minutes of Duolingo",
             "type":"intellectual",
             "rating":"5",
-            "date_modified":"May 5th 2020"           
+            "date_modified":"2020-05-14T19:10:27.090Z"           
         },
         {
             "selfcare_id":"2",
@@ -14,7 +14,7 @@ export default {
             "content":"Sat in the park and read a book",
             "type":"emotional",
             "rating":"5",
-            "date_modified":"May 3rd 2020"           
+            "date_modified":"2020-05-14T19:10:27.090Z"           
         },
         {
             "selfcare_id":"3",
@@ -22,7 +22,7 @@ export default {
             "content":"Filled out my daily gratitude",
             "type":"spiritual",
             "rating":"2",
-            "date_modified":"May 3rd 2020"           
+            "date_modified":"2020-05-14T19:10:27.090Z"           
         },
         {
             "selfcare_id":"4",
@@ -30,7 +30,7 @@ export default {
             "content":"Went for a run",
             "type":"physical",
             "rating":"5",
-            "date_modified":"May 1st 2020"           
+            "date_modified":"2020-05-14T19:10:27.090Z"           
         },
         {
             "selfcare_id":"5",
@@ -38,7 +38,7 @@ export default {
             "content":"Had a small social gathering with two amazing ladies",
             "type":"emotional",
             "rating":"5",
-            "date_modified":"May 1st 2020"           
+            "date_modified":"2020-05-14T19:10:27.090Z"           
         }
     ],
 
@@ -53,19 +53,19 @@ export default {
             "gratitude_id":"2",
             "user_id":"1",
             "content":"I kept my cool with the service phone rep",
-            "date_modified":"May 7th 2020"           
+            "date_modified":"2020-05-14T19:10:27.090Z"           
         },
         {
             "gratitude_id":"3",
             "user_id":"1",
             "content":"Seeing the tulips blooming",
-            "date_modified":"April 20th 2020"           
+            "date_modified":"2020-05-14T19:10:27.090Z"           
         },
         {
             "gratitude_id":"4",
             "user_id":"1",
             "content":"The yummy pizza I had for dinner last night",
-            "date_modified":"Mar 3rd 2020"           
+            "date_modified":"2020-05-14T19:10:27.090Z"           
         },
     ],
     goals:{
@@ -180,14 +180,14 @@ export default {
         "user_id":"1",
         "mood_level":"4",
         "energy_level":"5",
-        "date_modified":"Mar 3rd 2020",   
+        "date_modified":"2020-05-14T19:10:27.090Z",   
     },
     {
     "id":"2",
     "user_id":"1",
     "mood_level":"5",
     "energy_level":"2",
-    "date_modified":"Mar 3rd 2020",
+    "date_modified":"2020-05-14T19:10:27.090Z",
     }   
     ],
 

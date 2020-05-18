@@ -3,6 +3,7 @@ import './DailyForm.css';
 import ValidationError from '../ValidationError/ValidationError.js'
 import LoveMoreContext from '../LoveMoreContext.js'
 import config from '../config.js'
+import { FormatDate } from '../Functions/FormatDate'
 
 class DailyForm extends Component{
 
@@ -204,14 +205,15 @@ handleSubmit = e =>{
    };
 
     //add energy and mood
+    let newMoods={}
     if(energy.value && mood.value){
-        const newMoods = [{
+        newMoods = {
            // id:newid,
-            user_id:newuser_id,
+            //user_id:newuser_id,
             energy_level:energy.value,
             mood_level:mood.value,
            // date_modified:newdate,
-        }]
+        }
        // this.context.addMoods(newMoods);
     }
     console.log(newGratitude)
@@ -236,11 +238,12 @@ if(newGratitude.length !== 0){
       })
       .then(data => {
           console.log(data)
+          let formatedDateData = data.map(obj=>FormatDate(obj));
          /* this.state.gratitude1.value = '';
           this.state.gratitude2.value = '';
           this.state.gratitude3.value = '';*/
 
-        this.context.addGratitude(data);
+        this.context.addGratitude(formatedDateData);
       })
       .catch(error => {
         this.setState({ error })
@@ -268,12 +271,44 @@ if(newGratitude.length !== 0){
       })
       .then(data => {
           console.log(data)
-         this.context.addSelfCare(newSelfCare);
+          let formatedDateData = data.map(obj=>FormatDate(obj));
+         this.context.addSelfCare(formatedDateData);
       })
       .catch(error => {
         this.setState({ error })
       })
     }//end if newSC
+    if(newMoods){
+        fetch(`${config.API_DEV_ENDPOINT}api/moods`,{
+          method: 'POST',
+          body: JSON.stringify(newMoods),
+           headers: {
+           'content-type': 'application/json',
+           'Authorization': `Bearer ${config.API_KEY}`
+          },
+      })
+        .then(res => {
+          if (!res.ok) {
+            // get the error message from the response,
+            return res.json().then(error => {
+              // then throw it
+              throw error
+            })
+          }
+          return res.json()
+        })
+        .then(data => {
+            
+            let moodArray = [{data}];
+            let formatedDateData = moodArray.map(obj=>FormatDate(obj));
+            console.log(`this is the mood data ${formatedDateData}`)
+            //not doing anything with Moods/Energy in first version
+           // this.context.addMoods(formatedDateData);
+        })
+        .catch(error => {
+          this.setState({ error })
+        })
+      }//end if newMood
     
   this.props.history.push('/dashboard');
 }//end of handleSubmit

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import LoveMoreContext from '../LoveMoreContext.js'
-import './GoalForm.css'
+import './GoalForm.css';
+import config from '../config.js'
 
 class GoalForm extends Component{
  static contextType = LoveMoreContext;
@@ -8,22 +9,22 @@ class GoalForm extends Component{
      super(props);
      this.state={
         emotional:{
-            value:"",
+            value:0,
             touched:false,
         },
        
         spiritual:{
-            value:"",
+            value:0,
             touched:false,
         },
         
         intellectual:{
-            value:"",
+            value:0,
             touched:false,
         },
        
         physical:{
-            value:"",
+            value:0,
             touched:false,
         },
        
@@ -50,9 +51,34 @@ handleSubmit=(e)=>{
         "physical":physical.value,
         "intellectual":intellectual.value
   };
-  this.context.updateGoals(goals);
-  this.props.history.push('/dashboard');
-  console.log(goals)
+
+  fetch(`${config.API_DEV_ENDPOINT}api/goals`,{
+    method: 'POST',
+    body: JSON.stringify(goals),
+     headers: {
+     'content-type': 'application/json',
+     'Authorization': `Bearer ${config.API_KEY}`
+    },
+})
+  .then(res => {
+    if (!res.ok) {
+      // get the error message from the response,
+      return res.json().then(error => {
+        // then throw it
+        throw error
+      })
+    }
+    return res.json()
+  })
+  .then(data => {
+      console.log(data)
+      this.context.updateGoals(data);
+      this.props.history.push('/dashboard');
+  })
+  .catch(error => {
+    this.setState({ error })
+  })
+
 }
 
     render(){

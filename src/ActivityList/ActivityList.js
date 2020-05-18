@@ -16,7 +16,13 @@ class ActivityList extends Component{
            }
        
         let results = this.props.list;
-        let topThree = [ results[0], results[1], results[2]];
+        let sortedResults = results;
+        if(results[0].date_modified){
+            sortedResults = results.sort((a,b)=>
+                b.date_modified > a.date_modified ? 1 : b.date_modified < a.date_modified ? -1 : 0
+            );
+        }
+        let topThree = [ sortedResults[0], sortedResults[1], sortedResults[2]];
         
         return(
             <section className="recent-activities">
