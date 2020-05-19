@@ -1,6 +1,5 @@
 import React, { Component } from 'react'; 
 import LoveMoreContext from '../LoveMoreContext'
-//import './paginationButtons.css';
 
 class PaginationButtons extends Component{
     static contextType = LoveMoreContext;
@@ -9,7 +8,10 @@ class PaginationButtons extends Component{
         const numberOfResults = this.context[pageType].length;
         let currentPage = this.context.current_display[pageType].page;
         let lastPage = Math.ceil(numberOfResults/20);
-        if(direction === 'reset'|| currentPage === 1){
+        if(currentPage === 1 && currentPage === lastPage){
+            this.context.updateDisabled(pageType, 'lessthan20' )
+        }
+       else if(direction === 'reset'|| currentPage === 1){
          this.context.updateDisabled(pageType, 'start' )
         }
        else if(currentPage !==1 && currentPage<lastPage){
@@ -31,6 +33,10 @@ class PaginationButtons extends Component{
         let disabledButton = this.context.current_display[pageType].disabled;
         let disabledForward = false;
         let disabledBack = true;
+        if(disabledButton ==='lessthan20'){
+            disabledForward = true;
+            disabledBack = true;
+        }
         if(disabledButton === 'start'){
             disabledForward = false;
             disabledBack = true;

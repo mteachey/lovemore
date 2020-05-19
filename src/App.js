@@ -22,7 +22,6 @@ class App extends Component{
     this.state={
       selfcares:data.selfcare,
       gratitudes:data.gratitude,
-      gratitude_most_recent:data.gratitude,
       goals:data.goals,
       inspiration:data.inspiration,
       quotes:data.quotes,
@@ -53,16 +52,13 @@ updateCurrentPage=(typeOfPage, direction)=>{
 }
 
 updateTypeSelected=(typeOfPage,selectedType)=>{
-  console.log(`updateTS ran this is the page ${selectedType}`)
   const {current_display} = this.state;
   current_display[typeOfPage].type = selectedType;
   this.setState({current_display:current_display})
 }
 
 updateDisabled=(typeOfPage, direction)=>{
-  console.log(`updateDisable ran ${typeOfPage} ${direction}`)
   const {current_display} = this.state;
-
   current_display[typeOfPage].disabled = direction;
   this.setState({current_display:current_display})
 }
@@ -77,23 +73,19 @@ updateRatingSelected=(typeOfPage, ratingSelected)=>{
   const {current_display} = this.state;
   current_display[typeOfPage].rating = ratingSelected;
   this.setState({current_display:current_display});
-  console.log(`uRS ran`);
 }
  
 addSelfCare=(newSelfCare)=>{
   this.setState({
     selfcares: [...this.state.selfcares, ...newSelfCare]
-    },()=>{console.log(`this is the value from addSelfCare length ${this.state.selfcares.length} obj ${this.state.selfcares[this.state.selfcares.length-1].content}`)
-  })  
+    })  
 };
 
 addGratitude=(newGratitude)=>{
   console.log(`this is the OG length ${this.state.gratitudes.length}`)
   this.setState({
-    gratitudes: [...this.state.gratitudes, ...newGratitude]},()=>{
-      console.log(`this is the newG length ${this.state.gratitudes.length}`)
-    }
-  )
+    gratitudes: [...this.state.gratitudes, ...newGratitude]
+  })
 };
 
 addMoods=(newMoods)=>{
@@ -105,7 +97,7 @@ addMoods=(newMoods)=>{
 updateGoals=(newgoals)=>{
   this.setState({
     goals:newgoals
-  },()=>{console.log(this.state.goals)})
+  })
 }
 
 
@@ -248,9 +240,8 @@ componentDidMount(){
     return res.json()
   })
   .then(data=>{
-   // console.log(data)
+   
     let formatedDateData = data.map(obj=>FormatDate(obj));
-   // console.log(formatedDateData)
     this.setState({
       moods:formatedDateData,
      });
@@ -267,7 +258,6 @@ componentDidMount(){
     const contextValue = {
       selfcares:this.state.selfcares,
       gratitudes:this.state.gratitudes,
-      gratitude_most_recent:this.state.gratitude_most_recent,
       goals:this.state.goals,
       moods:this.state.moods,
       inspiration:this.state.inspiration,

@@ -9,7 +9,7 @@ class EntryList extends Component{
     render(){
         let {typeOfResults} = this.props;
         let results = this.context[typeOfResults];
-        let page = this.context.current_display[typeOfResults].page;
+       // let page = this.context.current_display[typeOfResults].page;
         let selectedType = this.context.current_display[typeOfResults].type;
         let selectedDate = this.context.current_display[typeOfResults].date_to;
         let selectedRating = this.context.current_display[typeOfResults].rating;
@@ -38,7 +38,7 @@ class EntryList extends Component{
         }
        
        //pagination of results
-        let numberOfResults=sortedResults.length;
+      /*  let numberOfResults=sortedResults.length;
         let arrayStart = ((page - 1)*20);
         let arrayEnd = (arrayStart + 20);
         let pageCurrentPageResults = [];
@@ -54,10 +54,10 @@ class EntryList extends Component{
                 let resultsObj = sortedResults[i];
                 pageCurrentPageResults = [...pageCurrentPageResults, resultsObj]
             }
-        }
+        }*/
         
 
-        sortedResults = pageCurrentPageResults;
+       // sortedResults = pageCurrentPageResults;
         
         return(
             <section className="results-list">

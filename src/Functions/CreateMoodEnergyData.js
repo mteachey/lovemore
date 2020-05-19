@@ -5,13 +5,10 @@ export const CreateMoodEnergyData = (data) =>{
   //let allSelfCares = this.context.selfcares;
   let currentMonth = date.toString().slice(4,8) ;
   let monthResults=[];
-  console.log(data[0].date_formatted);
   
     monthResults = data.filter(day=>
         day.date_formatted.slice(0,4).includes(currentMonth)) 
-   
-
-   //console.log(monthResults);
+  
    let monthMoodData =[]
    let monthEnergyData =[]
   
@@ -21,7 +18,7 @@ export const CreateMoodEnergyData = (data) =>{
        monthMoodData.push(newMoodObj)
        monthEnergyData.push(newenergyObj)
    }
-   console.log(monthEnergyData)
+  
    let lineData = [
        {"id": "mood",
         "color": "hsl(56, 70%, 50%)",
@@ -31,10 +28,9 @@ export const CreateMoodEnergyData = (data) =>{
         "color": "hsl(126, 70%, 0%)",
         "data": monthEnergyData
        }]
- //  console.log(monthMoodData)
-
+ 
     return(lineData)
-  //return([])
+
 }
 /*
 export default [

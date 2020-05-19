@@ -52,7 +52,7 @@ handleSubmit=(e)=>{
         "intellectual":intellectual.value
   };
 
-  fetch(`${config.API_DEV_ENDPOINT}api/goals`,{
+  fetch(`${config.API_ENDPOINT}api/goals`,{
     method: 'POST',
     body: JSON.stringify(goals),
      headers: {
@@ -71,15 +71,16 @@ handleSubmit=(e)=>{
     return res.json()
   })
   .then(data => {
-      console.log(data)
       this.context.updateGoals(data);
       this.props.history.push('/dashboard');
   })
   .catch(error => {
     this.setState({ error })
   })
-
 }
+handleClickCancel = () => {
+    this.props.history.push('/dashboard')
+};
 
     render(){
         return(
@@ -156,7 +157,7 @@ handleSubmit=(e)=>{
                         </fieldset> 
                         <div className="button-row">   
                             <button type="submit">Submit</button>
-                            <button type="input">Cancel</button>    
+                            <button type="input" onClick={this.handleClickCancel}>Cancel</button>    
                         </div>        
                     </form>
                 </main>

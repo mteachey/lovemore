@@ -1,22 +1,17 @@
 import React, { Component } from 'react'; 
 import LoveMoreContext from '../LoveMoreContext'
 import './FilterSortRow.css';
-import PaginationButtons from '../PaginationButtons/PaginationButtons.js'
-//import config from '../config.js'
+//import PaginationButtons from '../PaginationButtons/PaginationButtons.js'
 
 class FilterSortRow extends Component{
     static contextType = LoveMoreContext;
 
      updateType=(typeSelected)=>{
         this.context.updateTypeSelected(this.props.pageType, typeSelected);
-        //updatePageResults(type, this.props.pageType)
-        console.log(`updateType ran ${typeSelected}`)
      }
 
      updateRating=(ratingSelected)=>{
         this.context.updateRatingSelected(this.props.pageType, ratingSelected);
-        //updatePageResults(type, this.props.pageType)
-        
      }
 
     handleSubmitDate=(e)=>{
@@ -35,9 +30,9 @@ class FilterSortRow extends Component{
         if(this.props.filterOptions==='date-only'){
             filter = (
                 <div>
-                    <PaginationButtons 
+                    {/*<PaginationButtons 
                     pageType={this.props.pageType}
-                    />
+                    />*/}
                     <form className="filter-sort-control" onSubmit={e => this.handleSubmitDate(e)}>        
                         <label htmlFor="search_date">Search For a Date</label>
                         <input id="search_date" name="search_date" type="date"/>
@@ -51,9 +46,9 @@ class FilterSortRow extends Component{
             filter =  (
 
                 <div>
-                    <PaginationButtons 
-                        pageType={this.props.pageType}
-                        />
+                     {/*<PaginationButtons 
+                    pageType={this.props.pageType}
+                    />*/}
                     <label htmlFor="type_filter">Filter by Type</label>                    
                     <select id="type_filter"
                     onChange={e=>this.updateType(e.target.value)}
@@ -69,8 +64,9 @@ class FilterSortRow extends Component{
         else if(this.props.filterOptions==='all')
             {  filter = (
                 <div className="filter-sort-control">
-                 <PaginationButtons
-                 pageType={this.props.pageType}/>
+                 {/*<PaginationButtons 
+                    pageType={this.props.pageType}
+                    />*/}
                     <div >
                     <form className="filter-sort-control" onSubmit={e => this.handleSubmitDate(e)}>        
                         <label htmlFor="search_date">Search For a Date</label>

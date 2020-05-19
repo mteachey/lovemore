@@ -3,7 +3,7 @@ import React from 'react';
 const LoveMoreContext = React.createContext({
       selfcares:[],
       gratitudes:[],
-      gratitude_most_recent:[],
+    //  gratitude_most_recent:[],
       goals:{},
       inspiration:[],
       quotes:[],

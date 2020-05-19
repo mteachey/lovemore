@@ -154,11 +154,9 @@ handleSubmit = e =>{
             content:activity2.value,
             type:type2.value,
             rating:rating2.value,
-          //  date_modified:newdate,
         }
 
             newSelfCare = [...newSelfCare, newSelfCare2]
-            //console.log(`2nd ran ${newSelfCare[1].content}`)
         };
         if(activity3.value)
         { const newSelfCare3 = {
@@ -167,7 +165,6 @@ handleSubmit = e =>{
             content:activity3.value,
             type:type3.value,
             rating:rating3.value,
-           // date_modified:newdate,
         }
             newSelfCare = [...newSelfCare, newSelfCare3]
         };
@@ -357,13 +354,13 @@ handleClickCancel = () => {
                     <h1>Today's Self-Care and Gratitude</h1>
                 </header>
                 <form className="daily-form" onSubmit={e=>this.handleSubmit(e)}>
-                    <div className="date-option">
+                    {/*<div className="date-option">
                         <label htmlFor="date" >Today</label>
                         <select id="date">
                             <option value="1">Today</option>
                             <option value="0">Yesterday</option>
                         </select>
-                    </div>
+                    </div>*/}
                     <fieldset className="gratitude-entries">
                         <legend>I am thankful for...</legend>
                         <input placeholder="a morning walk" type="text" name="gratitude1"   id="gratitude1"
