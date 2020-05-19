@@ -232,7 +232,8 @@ componentDidMount(){
     this.setState({
       error: err.message
     });
-  })
+  })//end of fetch for goals
+
   fetch(`${config.API_DEV_ENDPOINT}api/moods`,{
     method:'GET',
     headers:{
@@ -247,7 +248,9 @@ componentDidMount(){
     return res.json()
   })
   .then(data=>{
+   // console.log(data)
     let formatedDateData = data.map(obj=>FormatDate(obj));
+   // console.log(formatedDateData)
     this.setState({
       moods:formatedDateData,
      });

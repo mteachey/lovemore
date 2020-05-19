@@ -8,10 +8,10 @@ class ActivityList extends Component{
 
     render(){
         let linkURL = '/'
-        if(this.props.typePage ==='activity'){
+        if(this.props.typePage ==='selfcares'){
          linkURL = '/past-care'
         }
-        else if(this.props.typePage ==='gratitude'){
+        else if(this.props.typePage ==='gratitudes'){
             linkURL = '/past-gratitude'
            }
        
@@ -23,7 +23,16 @@ class ActivityList extends Component{
             );
         }
         let topThree = [ sortedResults[0], sortedResults[1], sortedResults[2]];
-        
+
+        //version 2
+        let randomThree = [];
+        if(results[0].date_modified){
+            for(let i=0; i<3 ; i++){
+                let newRandomResult = sortedResults[Math.floor(Math.random() * results.length)]
+                randomThree.push(newRandomResult);
+            }
+        }
+
         return(
             <section className="recent-activities">
                 <Link className="button-link" to={linkURL}>See All</Link>

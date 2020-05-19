@@ -1,5 +1,7 @@
 import { ResponsiveLine } from '@nivo/line'
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { CreateMoodEnergyData } from '../Functions/CreateMoodEnergyData'
+import LoveMoreContext from '../LoveMoreContext.js';
 
 import data from './data-line'
 
@@ -9,12 +11,26 @@ import data from './data-line'
 // website examples showcase many properties,
 // you'll often use just a few of them.
 class ChartLine extends Component {
+    static contextType = LoveMoreContext;
 
     render() {
+        let array = this.context.moods;
+        let lineData=data;
+      //  console.log(array)
+        let moodEnergyData=[];
+        if(array[0].date_formatted)
+        { moodEnergyData = CreateMoodEnergyData(array);
+            lineData = moodEnergyData;
+           // console.log(`this is my data ${moodEnergyData[0]["data"][0]}`)
+         //  console.log(`this is the given ${data[0]["data"][0]}`)
+        }
+        
+
+
         return (
     <div className="chart">
     <ResponsiveLine
-        data={data}
+        data={lineData}
         margin={{ top: 30, right: 30, bottom: 90, left: 60 }}
         xScale={{ type: 'point' }}
         yScale={{ type: 'linear', min: 'auto', max: 'auto', stacked: false, reverse: false }}

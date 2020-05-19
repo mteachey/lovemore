@@ -4,38 +4,18 @@ import React, { Component } from 'react'
 import config from './config'
 import { ResponsiveBar } from '@nivo/bar'
 import './Chart.css'
-import LoveMoreContext from '../LoveMoreContext.js'
+import LoveMoreContext from '../LoveMoreContext.js';
+import { CreateProgressArray } from '../Functions/CreateProgressArray'
 
 class Chart extends Component {
 static contextType = LoveMoreContext;
 
-calculateTypeProgress=()=>{
-    let progressIntellectual = 0;
-    let progressEmotional =0;
-    let progressPhysical = 0;
-    let progressSpiritual = 0;
-
-    this.context.selfcares.forEach(obj=>{
-        if(obj.type==="intellectual"){
-            progressIntellectual = progressIntellectual+1
-        }
-        else if(obj.type==="emotional"){
-            progressEmotional = progressEmotional+1
-        }
-        else if(obj.type==="spiritual"){
-            progressSpiritual = progressSpiritual+1
-        }
-        else if(obj.type==="physical"){
-            progressPhysical = progressPhysical+1
-        }
-    })
-    let progressArray = [progressIntellectual,progressEmotional, progressSpiritual,progressPhysical]
-    return progressArray
-}
-
-
     render() {
-        let progressArray = this.calculateTypeProgress();
+        let array = this.context.selfcares;
+        let progressArray=[];
+        if(array!==0)
+        { progressArray = CreateProgressArray(array);
+        }
         let goals = this.context.goals;
         let progressData = [
             {
