@@ -30,9 +30,9 @@ class App extends Component{
       current_gratitude_results_page:1,
       current_selfcares_results_page:1,
       current_display:{
-        gratitudes:{page:1, date_to:'all', date_from:'', disabled:'start'},
-        selfcares :{page:1, date_to:'all', date_from:'', type:'all',rating:'all',disabled:'start'},
-        inspiration:{page:1, type:'all',disabled:'start'}
+        gratitudes:{page:1, date_to:'all', date_from:'', disabled:'start', lengthOfResults:0 },
+        selfcares :{page:1, date_to:'all', date_from:'', type:'all',rating:'all',disabled:'start',numberOfDisplayedResults:20, lengthOfResults:0},
+        inspiration:{page:1, type:'all',disabled:'start',numberOfDisplayedResults:20,lengthOfResults:0}
       }
     }//end of state 
   }
@@ -98,6 +98,13 @@ updateGoals=(newgoals)=>{
   this.setState({
     goals:newgoals
   })
+}
+
+updateNumberofTotalResults=(typeOfPage, number)=>{
+ /*const {current_display} = this.state;
+  current_display[typeOfPage].lengthOfResults = number;
+  this.setState({current_display:current_display});*/
+  console.log(`UNR ran`)
 }
 
 
@@ -272,6 +279,7 @@ componentDidMount(){
       current_display:this.state.current_display,
       updateTypeSelected:this.updateTypeSelected,
       updateDisabled:this.updateDisabled,
+      updateNumberofTotalResults:this.updateNumberofTotalResults,
       }
     return(
       <div className="App">

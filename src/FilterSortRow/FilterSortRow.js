@@ -1,7 +1,7 @@
 import React, { Component } from 'react'; 
 import LoveMoreContext from '../LoveMoreContext'
 import './FilterSortRow.css';
-//import PaginationButtons from '../PaginationButtons/PaginationButtons.js'
+
 
 class FilterSortRow extends Component{
     static contextType = LoveMoreContext;
@@ -17,11 +17,6 @@ class FilterSortRow extends Component{
     handleSubmitDate=(e)=>{
         e.preventDefault()
         const {search_date} = e.target;
-      /*  console.log(search_date.value);
-        let month = search_date.value.slice(5,7);
-        let day = search_date.value.slice(8,10);
-        let year = search_date.value.slice(0,4);
-        console.log(month, day, year);*/
         this.context.updateDateSelected(this.props.pageType,search_date.value)
     }
 
@@ -30,9 +25,6 @@ class FilterSortRow extends Component{
         if(this.props.filterOptions==='date-only'){
             filter = (
                 <div>
-                    {/*<PaginationButtons 
-                    pageType={this.props.pageType}
-                    />*/}
                     <form className="filter-sort-control" onSubmit={e => this.handleSubmitDate(e)}>        
                         <label htmlFor="search_date">Search For a Date</label>
                         <input id="search_date" name="search_date" type="date"/>
@@ -46,9 +38,6 @@ class FilterSortRow extends Component{
             filter =  (
 
                 <div>
-                     {/*<PaginationButtons 
-                    pageType={this.props.pageType}
-                    />*/}
                     <label htmlFor="type_filter">Filter by Type</label>                    
                     <select id="type_filter"
                     onChange={e=>this.updateType(e.target.value)}
@@ -64,9 +53,6 @@ class FilterSortRow extends Component{
         else if(this.props.filterOptions==='all')
             {  filter = (
                 <div className="filter-sort-control">
-                 {/*<PaginationButtons 
-                    pageType={this.props.pageType}
-                    />*/}
                     <div >
                     <form className="filter-sort-control" onSubmit={e => this.handleSubmitDate(e)}>        
                         <label htmlFor="search_date">Search For a Date</label>
