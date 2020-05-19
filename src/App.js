@@ -112,7 +112,7 @@ updateGoals=(newgoals)=>{
 componentDidMount(){
   this.setState({ error : null })
   //getting gratitudes
-  fetch(`${config.API_DEV_ENDPOINT}api/gratitudes`,{
+  fetch(`${config.API_ENDPOINT}api/gratitudes`,{
     method:'GET',
     headers:{
       'content-type': 'application/json',
@@ -139,7 +139,7 @@ componentDidMount(){
       error: err.message
     });
   })
-  fetch(`${config.API_DEV_ENDPOINT}api/selfcares`,{
+  fetch(`${config.API_ENDPOINT}api/selfcares`,{
     method:'GET',
     headers:{
       'content-type': 'application/json',
@@ -163,7 +163,7 @@ componentDidMount(){
       error: err.message
     });
   })
-  fetch(`${config.API_DEV_ENDPOINT}api/inspires`,{
+  fetch(`${config.API_ENDPOINT}api/inspires`,{
     method:'GET',
     headers:{
       'content-type': 'application/json',
@@ -186,7 +186,7 @@ componentDidMount(){
       error: err.message
     });
   })
-  fetch(`${config.API_DEV_ENDPOINT}api/quotes`,{
+  fetch(`${config.API_ENDPOINT}api/quotes`,{
     method:'GET',
     headers:{
       'content-type': 'application/json',
@@ -209,7 +209,7 @@ componentDidMount(){
       error: err.message
     });
   })
-  fetch(`${config.API_DEV_ENDPOINT}api/goals`,{
+  fetch(`${config.API_ENDPOINT}api/goals`,{
     method:'GET',
     headers:{
       'content-type': 'application/json',
@@ -234,7 +234,7 @@ componentDidMount(){
     });
   })//end of fetch for goals
 
-  fetch(`${config.API_DEV_ENDPOINT}api/moods`,{
+  fetch(`${config.API_ENDPOINT}api/moods`,{
     method:'GET',
     headers:{
       'content-type': 'application/json',

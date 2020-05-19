@@ -218,7 +218,7 @@ handleSubmit = e =>{
     }
     console.log(newGratitude)
 if(newGratitude.length !== 0){
-  fetch(`${config.API_DEV_ENDPOINT}api/gratitudes`,{
+  fetch(`${config.API_ENDPOINT}api/gratitudes`,{
         method: 'POST',
         body: JSON.stringify(newGratitude),
          headers: {
@@ -251,7 +251,7 @@ if(newGratitude.length !== 0){
     }//end of newGratitude
 
     if(newSelfCare.length !== 0){
-      fetch(`${config.API_DEV_ENDPOINT}api/selfcares`,{
+      fetch(`${config.API_ENDPOINT}api/selfcares`,{
         method: 'POST',
         body: JSON.stringify(newSelfCare),
          headers: {
@@ -279,7 +279,7 @@ if(newGratitude.length !== 0){
       })
     }//end if newSC
     if(newMoods){
-        fetch(`${config.API_DEV_ENDPOINT}api/moods`,{
+        fetch(`${config.API_ENDPOINT}api/moods`,{
           method: 'POST',
           body: JSON.stringify(newMoods),
            headers: {
