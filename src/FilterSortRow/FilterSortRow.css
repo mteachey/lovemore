@@ -2,6 +2,11 @@
     display:flex;
     flex-wrap:wrap;
     justify-content: space-around;
+    align-items: center;
+}
+
+.filter-dates-only{
+  justify-content:center;
 }
 
 .filter-sort-control > div{
@@ -9,5 +14,56 @@
 }
 
 .filter-sort-control input{
+  font-family:'Nunito', sans-serif;
     border:1px solid #000;
+    width: 150px;
+    margin: 15px 0;
+    height: 20px;
+    font-size: 15px;
+    border:1px solid black;
+}
+
+.filter-sort-control label {
+  margin-right: 5px;
+}
+
+.filter-sort-control select {
+  font-size: 14px;
+  border:1px solid #40004b;
+  font-family:'Nunito', sans-serif;
+}
+
+.filter-sort-control button, .pagination-button-row button{
+  border: 0px #fff solid;
+  color: #fff;
+  padding: 8px 10px;
+  width:100px;
+  height:36px;
+  text-decoration: none;
+  margin: 0 5px;
+  background-color: #738c11;
+  border-radius: 15px;
+  font-size: 17px;
+  border:1px solid #40004b;
+}
+
+.pagination-button-row button{
+  height:36px;
+  padding:6px 10px;
+  background-color: #fff;
+  color:#40004b;
+  border:1px solid #40004b;
+}
+
+
+.filter-sort-control button:hover, .pagination-button-row button:hover{
+  /*background-color:#fff;
+  color:#40004b;*/
+  background-color:#40004b;
+  color:#fff;
+  border-width: 0;
+  box-shadow: 0px 3px 4px #000, inset 0px 1px 12px #fff;
+}
+.pagination-button-row button:disabled{
+color: -internal-light-dark-color(graytext, rgb(170, 170, 170))!important;
 }

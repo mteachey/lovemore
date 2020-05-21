@@ -68,7 +68,6 @@ class EntryList extends Component{
               disabledBack = false;
         }
         
-
         results = pageCurrentPageResults;
         
         return(

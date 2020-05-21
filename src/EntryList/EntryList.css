@@ -4,6 +4,7 @@ ul.result-list {
     width:90%;
 }
 
-.result-list li{
-  margin:10px 0;
+.results-list{
+  margin-top:20px
 }
+

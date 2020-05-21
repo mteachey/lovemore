@@ -3,6 +3,7 @@ import EntryList from '../EntryList/EntryList.js';
 import FilterSortRow from '../FilterSortRow/FilterSortRow.js'
 import LoveMoreContext from '../LoveMoreContext'
 import './PastGratitude.css'
+import ButtonRow from '../ButtonRow/ButtonRow'
 
 class PastGratitude extends Component{
     static contextType = LoveMoreContext;
@@ -20,7 +21,10 @@ class PastGratitude extends Component{
                      />
                     <EntryList
                      typeOfResults = {'gratitudes'}
-                    />                   
+                    />    
+                    <ButtonRow
+                        links ={[{'/daily-form':'Today\'s Care & Gratitude'},{'/past-care':'Your Past Care Entries'},{'/past-gratitude':'Your Past Gratitudes'},{'/goal-form':'Set Your Goals'},{'/inspiration':'Get Inspired, Get Grateful'}]}
+                        />               
                 </main>
 
             </div>

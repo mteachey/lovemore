@@ -1,6 +1,8 @@
 import React, { Component } from 'react'; 
 import LoveMoreContext from '../LoveMoreContext'
-import ActivityList from '../ActivityList/ActivityList'
+import ActivityList from '../ActivityList/ActivityList';
+import GoalList from '../GoalList/GoalList';
+
 
 class MostRecent extends Component{
     static contextType = LoveMoreContext;
@@ -22,6 +24,7 @@ class MostRecent extends Component{
                        list = {this.context.gratitudes}
                        listHeading = {`Your Most Recent Gratitudes`} 
                        random = {true}/>
+                     <GoalList/>
                 </main>
             </section>
         )

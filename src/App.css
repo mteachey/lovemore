@@ -1,5 +1,33 @@
-* {
+/*colors
+bright green #738c11;
+med green #324211
+darkest gren #2929e10
+muted green c4bd82
+
+*/
+{
   box-sizing: border-box;
+}
+
+body{
+  background-color:#fff7c8;
+  font-family: 'Nunito', sans-serif;
+}
+
+body::after {
+  content: "";
+  background-image: url(./images/lmlm2-background.jpg);
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center center;
+  background-attachment:fixed;
+  opacity: 0.15;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  z-index: -1;   
 }
 
 .App > section, .App>div{
@@ -18,11 +46,27 @@
   color: white;
 }
 
+h1, h2, h3, h4{
+  font-family: 'Comfortaa', cursive;
+  font-family: 'Fredoka One', cursive;
+  font-family: 'Lobster Two', cursive;
+  
+}
+
 h1{
   text-align:center;
+  color:#40004b;
+  
 }
+
+h3 {
+  font-size: 1.5em;
+}
+
 .tagline{
   text-align: center;
 }
+
+
 
 

@@ -44,7 +44,7 @@ class ChartPie extends Component {
 
         ]
         return (
-            <div className="chart">
+            <div className="chart chart-pie">
                 <ResponsivePie
                     data={pieData}
                     margin={{ top: 40, right: 80, bottom: 80, left: 80 }}

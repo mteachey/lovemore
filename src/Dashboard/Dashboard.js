@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Progress from '../Progress/Progress';
 import ButtonRow from '../ButtonRow/ButtonRow'
 import RandomQuote from '../RandomQuote/RandomQuote.js'
-import './Dashboard.css'
+import './Dashboard.css';
+import Nav from '../Nav/Nav.js';
 
 
 class Dashboard extends Component{
@@ -10,6 +11,9 @@ class Dashboard extends Component{
         return(
             <div className="dashboard">
                 <header>
+                <Nav
+                pageType={'interior'}
+                />
                     <h1>Your Laugh More Love More Dashboard</h1>
                    <RandomQuote/>
                 </header>

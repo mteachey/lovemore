@@ -1,3 +1,10 @@
+/*colors
+bright green #738c11;
+med green #324211
+darkest gren #2929e10
+muted green c4bd82
+*/
+
 .progress{
     display:flex;
     flex-direction:column;
@@ -8,7 +15,7 @@
 
 .progress > section{
     /*width:32%;*/
-    border:1px solid gray;
+    /*border:1px solid gray;*/
     margin-bottom:25px;
 }
 
@@ -23,6 +30,17 @@ li{
 
 .button-row{
     margin:25px auto;
+}
+
+.quote{
+    background-color:#738c11;
+    border-radius:5px;
+    color:#fff;
+    margin-bottom:2em;
+}
+
+.quote p{
+    padding:5px;
 }
 
 @media only screen and (min-width:760px){

@@ -5,6 +5,8 @@ import LearnMore from '../LearnMore/LearnMore.js'
 //import UserSignUp from '../UserSignUp-Beta/UserSignUp.js'
 //import RandomQuote from '../RandomQuote/RandomQuote.js'
 import './Home.css'
+import Nav from '../Nav/Nav.js';
+
 
 class Home extends Component{
 state = {
@@ -21,6 +23,15 @@ startExploring = () => {
 
 signUpPopUp=()=>{
     this.setState(prevState => ({ isBoxVisible: !prevState.isBoxVisible }));
+}
+
+signUpInClick=()=>{
+   this.setState(prevState => ({ isBoxVisible: !prevState.isBoxVisible }));
+   console.log(`clicked`)
+}
+
+gotoLearnMore=()=>{
+    console.log(`gtLM clicked`)
 }
 
 learnMore=()=>{
@@ -40,18 +51,23 @@ learnMore=()=>{
         const { isBoxVisible } = this.state;
         return(
             <div className="home">
+            <Nav
+            pageType={'home'}
+            onSignUpInClick = {this.signUpInClick}
+            gotoLearnMore = {this.gotoLearnMore}
+            />
                 <header className="header-home">
                     <h1>Love More Laugh More</h1>
                     <h2 className="tagline">Find the sweetness in your own heart, then you may find the sweetness in every heart.</h2>
-                       <button onClick={this.learnMore}>Learn More</button>
-                        <button onClick={this.signUpPopUp}>Start</button>
+                       <button className="button" onClick={this.learnMore}>Learn More</button>
+                        <button className="button" onClick={this.signUpPopUp}>Start</button>
                  </header>
                  <main> 
                     <div className={`box ${isBoxVisible ? "" : "hidden"}`}>
                        {/*} <span className="closebtn">&times;</span>*/}
                         <p>Thanks for your interest in Love More Laugh More!</p><p>This is the Beta version so we are not yet allowing users to sign-up. Please explore around, play with the forms, and check back soon!</p>
-                        <button onClick={this.startExploring}>Explore</button>
-                        <button onClick = {e => this.learnMore()}>Learn More</button>
+                        <button className="button" onClick={this.startExploring}>Explore</button>
+                        <button className="button" onClick = {e => this.learnMore()}>Learn More</button>
                     </div> 
                     <div ref={this.state.statsRef}></div> 
                     <About/>

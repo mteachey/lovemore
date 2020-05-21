@@ -20,7 +20,7 @@ fieldset {
     margin: auto;
 }
 
-button{
+.button{
     font-size:17px;
     margin:0px 10px;
     border: 1px #40004b solid;

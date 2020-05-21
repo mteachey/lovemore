@@ -41,7 +41,7 @@ static contextType = LoveMoreContext;
         ]
 
         return (
-            <div className="chart">
+            <div className="chart chart-bar">
                 <ResponsiveBar
                     data={progressData}
                     keys={config.keys}

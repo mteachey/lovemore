@@ -24,8 +24,8 @@ class FilterSortRow extends Component{
         let filter = '';
         if(this.props.filterOptions==='date-only'){
             filter = (
-                <div>
-                    <form className="filter-sort-control" onSubmit={e => this.handleSubmitDate(e)}>        
+                <div className="filter-sort-control filter-dates-only">
+                    <form className="filter-sort-control " onSubmit={e => this.handleSubmitDate(e)}>        
                         <label htmlFor="search_date">Search For a Date</label>
                         <input id="search_date" name="search_date" type="date"/>
                         <button type="submit">Search</button>
@@ -37,7 +37,7 @@ class FilterSortRow extends Component{
         else if(this.props.filterOptions==='type-only'){
             filter =  (
 
-                <div>
+                <div className="filter-sort-control">
                     <label htmlFor="type_filter">Filter by Type</label>                    
                     <select id="type_filter"
                     onChange={e=>this.updateType(e.target.value)}
@@ -54,7 +54,7 @@ class FilterSortRow extends Component{
             {  filter = (
                 <div className="filter-sort-control">
                     <div >
-                    <form className="filter-sort-control" onSubmit={e => this.handleSubmitDate(e)}>        
+                    <form className="filter-sort-control-form" onSubmit={e => this.handleSubmitDate(e)}>        
                         <label htmlFor="search_date">Search For a Date</label>
                         <input id="search_date" name="search_date" type="date"/>
                         <button type="submit">Search</button>

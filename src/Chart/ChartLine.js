@@ -28,7 +28,7 @@ class ChartLine extends Component {
 
 
         return (
-    <div className="chart">
+    <div className="chart chart-line">
     <ResponsiveLine
         data={lineData}
         margin={{ top: 30, right: 30, bottom: 90, left: 60 }}

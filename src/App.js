@@ -14,6 +14,9 @@ import LoveMoreContext from './LoveMoreContext.js';
 import data from './data.js'
 import config from './config.js'
 import { FormatDate } from './Functions/FormatDate'
+import Lotus from './Lotus.js'
+
+
 
 
 class App extends Component{
@@ -276,7 +279,8 @@ componentDidMount(){
     return(
       <div className="App">
         <LoveMoreContext.Provider value={contextValue}>
-        <Nav/>
+        
+        <Lotus/>
         <Route
             exact
             path='/'
@@ -313,7 +317,8 @@ componentDidMount(){
             component={GoalForm}
         /> 
           <Footer/>
-        </LoveMoreContext.Provider>       
+        </LoveMoreContext.Provider>     
+          
       </div>
     )
   }

@@ -37,7 +37,7 @@ class ActivityList extends Component{
             <section className="recent-activities">
                 <Link className="button-link" to={linkURL}>See All</Link>
                     <ul className="recent-activities-list">
-                         <li>{this.props.listHeading}</li>
+                         <li >{this.props.listHeading}</li>
                         {topThree.map((entry,i)=> 
                             <li key={i} className="recent-activities-item"><span>{entry.content}</span><span>{entry.date_formatted}</span></li>)}                        
                     </ul>

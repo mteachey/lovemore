@@ -1,3 +1,8 @@
+/*bright green #738c11;
+med green #324211
+darkest gren #2929e10
+muted green c4bd82*/
+
 .home{
     max-width:95%;
     margin:auto;
@@ -20,12 +25,29 @@
 
 header.header-home {
     min-height: 80vh;
-    margin-top: 20vh;
+    padding-top: 20vh;
 }
 
 .header-home h1 {
     max-width: 235px;
     margin: auto;
+}
+
+.button{
+    color:#fff7c8;
+    background-color:#324211;
+    font-size:17px;
+    margin:0px 10px;
+    border: 1px #40004b solid;
+    padding:10px;
+    width:120px;
+    margin: 10px;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+.button:hover{
+ background-color:#738c11;
 }
 
 .box{
