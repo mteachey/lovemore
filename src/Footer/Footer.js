@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
-import './Footer.css'
+
 
 class Footer extends Component{
     render(){
         return(
             <footer className="footer">
                 <div className="footer-section">
-                    <p>footer-section1</p>
+                    <p>contact melindateachey@gmail.com</p>
                 </div>
                 <div className="footer-section">
-                    <p>footer-section2</p>
+                    <p></p>
                 </div>
                 <div className="footer-section">
-                    <p>footer-section3</p>
+                    <p></p>
                 </div>
                 <div className="footer-section">
-                    <p>footer-section4</p>
+                    <p>copyright 2020</p>
                 </div>
             </footer>
         )

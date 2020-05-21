@@ -9,15 +9,14 @@ muted green c4bd82*/
     position: relative;
 }
 
-
 .tagline{
+    text-align: center;
     font-style:italic;
-    font-size:16px;
-    max-width: 400px;
-    margin: auto;
-    margin-top:20px;
+    font-size:17px;
+    margin: 20px auto;
     font-weight:400;
-}
+    max-width:400px;
+  }
 
 .home section p{
     text-align:left;
@@ -33,21 +32,10 @@ header.header-home {
     margin: auto;
 }
 
-.button{
-    color:#fff7c8;
-    background-color:#324211;
+.home .button{
     font-size:17px;
     margin:0px 10px;
-    border: 1px #40004b solid;
-    padding:10px;
-    width:120px;
     margin: 10px;
-    text-decoration: none;
-    display: inline-block;
-  }
-
-.button:hover{
- background-color:#738c11;
 }
 
 .box{
@@ -78,8 +66,9 @@ header.header-home {
     width:15px;
 }
 
-.hidden{
-    display:none;
+.box button:hover{
+    background-color:#40004b;
+    color:#fff;
 }
 
 @media only screen and (min-width:760px){

@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import LoveMoreContext from '../LoveMoreContext.js'
-import './GoalForm.css';
+import '../_styles/Form.css';
 import config from '../config.js'
+import ButtonRow from '../ButtonRow/ButtonRow'
+import Nav from '../Nav/Nav.js';
 
 class GoalForm extends Component{
  static contextType = LoveMoreContext;
@@ -86,6 +88,9 @@ handleClickCancel = () => {
         return(
             <div className="goalform">
                 <header>
+                    <Nav
+                    pageType={'interior'}
+                    />
                     <h1>Your Goals</h1>
                 </header>
                 <main>
@@ -160,6 +165,9 @@ handleClickCancel = () => {
                             <button type="input" onClick={this.handleClickCancel}>Cancel</button>    
                         </div>        
                     </form>
+                    <ButtonRow
+                        links ={[{'/daily-form':'Today\'s Care & Gratitude'},{'/past-care':'Your Past Care Entries'},{'/past-gratitude':'Your Past Gratitudes'},{'/goal-form':'Set Your Goals'},{'/inspiration':'Get Inspired, Get Grateful'}]}
+                        />    
                 </main>
             </div>
         )

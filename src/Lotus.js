@@ -16,51 +16,46 @@ const fade = keyframes`
 opacity:0;
 }
 100%{
-  opacity:1;
+  opacity:.9;
 }
 `;
 
 
-
 const StyledLotus = styled(LotusSVG)`
-//animation: ${rotate} infinite 2s linear;
 height:100px;
 width:100px;
 display:block;
 margin:auto;
 position: absolute;
-right: 47%;
+right: 45.5%;
 top: 0%;
-opacity: 0;
+opacity: 1;
+z-index:-2;
+.st0{
+  animation: ${fade} ease-in;
+  animation-duration:.25s;
+  animation-delay:0s;
+  animation-fill-mode:both;
+}
 .st5{
-    animation: ${fade} ease-in;
-    animation-duration:1s;
-    animation-delay:0s;
-    animation-fill-mode:forwards;
+    animation-delay:2s;
 }
 .st3{
-    animation: ${fade} ease-in;
-    animation-duration:1s;
-    animation-delay:3s;
-    animation-fill-mode:forwards;
+    animation-delay:2.25s;
+    fill:#c3a5cf;
 }
 .st1{
-    animation: ${fade} ease-in;
-    animation-delay:6s;
-    animation-duration:1s;
-    animation-fill-mode:forwards;
+    animation-delay:2.5s;
 }
 .st4{
-    animation: ${fade} ease-in;
-    animation-delay:9s;
-    animation-duration:1s;
-    animation-fill-mode:forwards;
+    animation-delay:2.75s;
+    fill:#c3a5cf;
 }
 .st2{
-    animation: ${fade} ease-in;
-    animation-delay:12s;
-    animation-duration:1s;
-    animation-fill-mode:forwards;
+    animation-delay:3s;
+}
+.reverse{
+  animation-direction:reverse;
 }
 `
 

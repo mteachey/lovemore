@@ -1,7 +1,7 @@
 import React, { Component } from 'react'; 
 import LoveMoreContext from '../LoveMoreContext'
 import EntryItem from '../EntryItem/EntryItem.js'
-import './EntryList.css'
+import '../_styles/EntryList.css'
 
 
 class EntryList extends Component{
@@ -52,6 +52,12 @@ class EntryList extends Component{
         let pageCurrentPageResults = [];
         let disabledForward = false;
         let disabledBack = true;
+
+        console.log(numberOfResults);
+        if(arrayEnd >= numberOfResults){
+            disabledForward = true;
+            disabledBack = true;
+        }
   
         if(arrayEnd <= numberOfResults){
             for (let i=arrayStart;i<arrayEnd; i++){

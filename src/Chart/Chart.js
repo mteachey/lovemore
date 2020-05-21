@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 //import data from './data'
 import config from './config'
 import { ResponsiveBar } from '@nivo/bar'
-import './Chart.css'
+import '../_styles/Chart.css'
 import LoveMoreContext from '../LoveMoreContext.js';
 import { CreateProgressArray } from '../Functions/CreateProgressArray'
 

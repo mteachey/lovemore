@@ -1,7 +1,6 @@
 import React, { Component } from 'react'; 
 import LoveMoreContext from '../LoveMoreContext';
 import { Link } from 'react-router-dom';
-import './ActivityList.css';
 
 class ActivityList extends Component{
     static contextType = LoveMoreContext;

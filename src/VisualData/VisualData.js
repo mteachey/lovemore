@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Chart from '../Chart/Chart.js';
 import ChartPie from '../Chart/ChartPie.js';
 import ChartLine from '../Chart/ChartLine.js';
-import './VisualData.css';
 
 class VisualData extends Component{
     render(){

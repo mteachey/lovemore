@@ -1,7 +1,7 @@
 import React, { Component } from 'react'; 
 import LoveMoreContext from '../LoveMoreContext';
 import { Link } from 'react-router-dom'
-import './GoalList.css'
+import '../_styles/GoalList.css'
 
 class GoalList extends Component{
     static contextType = LoveMoreContext;

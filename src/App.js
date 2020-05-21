@@ -15,8 +15,7 @@ import data from './data.js'
 import config from './config.js'
 import { FormatDate } from './Functions/FormatDate'
 import Lotus from './Lotus.js'
-
-
+import LearnMorePage from './LearnMorePage/LearnMorePage'
 
 
 class App extends Component{
@@ -315,6 +314,11 @@ componentDidMount(){
             exact
             path='/goal-form'
             component={GoalForm}
+        /> 
+        <Route
+            exact
+            path='/learn-more'
+            component={LearnMorePage}
         /> 
           <Footer/>
         </LoveMoreContext.Provider>     

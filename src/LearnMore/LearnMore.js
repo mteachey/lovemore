@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import ButtonRow from '../ButtonRow/ButtonRow'
+import Nav from '../Nav/Nav.js';
 
 class LearnMore extends Component{
     render(){

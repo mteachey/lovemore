@@ -1,7 +1,7 @@
 /*colors
 bright green #738c11;
 med green #324211
-darkest gren #2929e10
+darkest gren #292e10
 muted green c4bd82
 */
 
@@ -34,13 +34,17 @@ li{
 
 .quote{
     background-color:#738c11;
-    border-radius:5px;
+    border-radius:20px;
     color:#fff;
     margin-bottom:2em;
+    display: inline-block;
 }
 
+
 .quote p{
-    padding:5px;
+    padding:5px 20px;
+    margin-block-start: .5em;
+    margin-block-end: .5em;
 }
 
 @media only screen and (min-width:760px){

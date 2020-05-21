@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import './DailyForm.css';
+import '../_styles/Form.css';
 import ValidationError from '../ValidationError/ValidationError.js'
 import LoveMoreContext from '../LoveMoreContext.js'
 import config from '../config.js'
 import { FormatDate } from '../Functions/FormatDate'
+import ButtonRow from '../ButtonRow/ButtonRow'
+import Nav from '../Nav/Nav.js';
 
 class DailyForm extends Component{
 
@@ -351,6 +353,9 @@ handleClickCancel = () => {
         return(
             <section className="dailyform">
                 <header>
+                    <Nav
+                    pageType={'interior'}
+                    />
                     <h1>Today's Self-Care and Gratitude</h1>
                 </header>
                 <form className="daily-form" onSubmit={e=>this.handleSubmit(e)}>
@@ -474,26 +479,30 @@ handleClickCancel = () => {
               
                 <fieldset className="mood-input">
                     <legend>How I am feeling today</legend>
-                    <label htmlFor="mood">My Mood</label>
-                    <select id="mood"
-                    onChange={e => this.updateMood(e.target.value)}>
-                        <option value="">Select</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>      
-                    <label htmlFor="energy">My Energy-level</label>
-                    <select id="energy"
-                     onChange={e => this.updateEnergy(e.target.value)}>
-                         <option value="">Select</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>       
+                    <div>
+                        <label htmlFor="mood">My Mood</label>
+                        <select id="mood"
+                        onChange={e => this.updateMood(e.target.value)}>
+                            <option value="">Select</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>   
+                    </div>
+                    <div>   
+                        <label htmlFor="energy">My Energy-level</label>
+                        <select id="energy"
+                        onChange={e => this.updateEnergy(e.target.value)}>
+                            <option value="">Select</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>   
+                    </div>    
                 </fieldset>                
              <div className="button-row">    
                 <button type="submit"
@@ -509,6 +518,9 @@ handleClickCancel = () => {
                     Cancel</button>
              </div>
             </form>
+            <ButtonRow
+                        links ={[{'/daily-form':'Today\'s Care & Gratitude'},{'/past-care':'Your Past Care Entries'},{'/past-gratitude':'Your Past Gratitudes'},{'/goal-form':'Set Your Goals'},{'/inspiration':'Get Inspired, Get Grateful'}]}
+                        />    
         </section>
         )
     }

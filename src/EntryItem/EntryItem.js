@@ -1,6 +1,6 @@
 import React, { Component } from 'react'; 
 import LoveMoreContext from '../LoveMoreContext'
-import './EntryItem.css'
+
 
 
 class EntryItem extends Component{

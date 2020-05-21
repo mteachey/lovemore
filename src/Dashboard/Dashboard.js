@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Progress from '../Progress/Progress';
 import ButtonRow from '../ButtonRow/ButtonRow'
 import RandomQuote from '../RandomQuote/RandomQuote.js'
-import './Dashboard.css';
+import '../_styles/Dashboard.css';
 import Nav from '../Nav/Nav.js';
 
 

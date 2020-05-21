@@ -9,6 +9,7 @@ label {
 select {
     font-size: 14px;
     border:1px solid #40004b;
+    margin-bottom: 19px;
 }
 
 fieldset {
@@ -58,7 +59,7 @@ fieldset {
 .content-input input{
     margin: 15px 0;
     height: 20px;
-    width:250px;
+    width:180px;
     border: 1px solid black;
 }
 
@@ -106,12 +107,32 @@ input[type="text"]:disabled {
     background-color: #fff;
 }
 
-@media only screen and (min-width:960px){
+/***Goal Form*****/
+.goal-form{
+    font-size: 17px;
+}
+
+.goal-form select{
+border:1px solid #40004b;
+margin-bottom: 19px;
+}
+
+.goal-form {
+    text-align: left;
+    max-width: 500px;
+    margin: auto;
+}
+
+@media only screen and (min-width:760px){
     .content-input input{
         width:440px;
     }
 
     .gratitude-entries input, .activity-input input {
         font-size: 17px;
+    }
+
+    select {
+        margin-bottom: 0;
     }
 }

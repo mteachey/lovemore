@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import About from '../About/About';
 import LearnMore from '../LearnMore/LearnMore.js'
-//import ButtonRow from '../ButtonRow/ButtonRow.js';
-//import UserSignUp from '../UserSignUp-Beta/UserSignUp.js'
-//import RandomQuote from '../RandomQuote/RandomQuote.js'
-import './Home.css'
+import '../_styles/Home.css'
 import Nav from '../Nav/Nav.js';
+import Lotus from '../Lotus.js';
 
 
 class Home extends Component{
@@ -51,6 +49,7 @@ learnMore=()=>{
         const { isBoxVisible } = this.state;
         return(
             <div className="home">
+                <Lotus/>
             <Nav
             pageType={'home'}
             onSignUpInClick = {this.signUpInClick}

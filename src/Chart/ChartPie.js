@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 import LoveMoreContext from '../LoveMoreContext.js'
 import { CreateProgressArray } from '../Functions/CreateProgressArray'
-
-//import data from './data-pie'
-
 import { ResponsivePie } from '@nivo/pie'
 // make sure parent container have a defined height when using
 // responsive component, otherwise height will be 0 and

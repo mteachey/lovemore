@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import './ButtonRow.css'
 
 class ButtonRow extends Component{
     static defaultProps ={

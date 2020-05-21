@@ -5,18 +5,30 @@ import LoveMoreContext from '../LoveMoreContext.js'
 class RandomQuote extends Component{
     static contextType = LoveMoreContext;
 
-    chooseQuote=()=>{
+    state = {
+        dailyQuote:'',
+        chooseQuoteRan:false,
+     };
+
+     chooseQuote=()=>{
+       
         let numberOfQuotes = this.context.quotes.length;
         let quotePickNumber = Math.floor(Math.random() * (numberOfQuotes));
         let quote = this.context.quotes[quotePickNumber].content;
-        return quote
-    }
+        
+        this.setState({choseQuoteRan:true, dailyQuote:quote}); 
+        //return quote
+     }
 
 
+componentDidMount(){
+    this.chooseQuote()
+}
+    
     render(){
         return(
             <div className="quote">
-               <p>Your Daily Quote : "{this.chooseQuote()}"</p>
+                <p>{this.state.dailyQuote}</p>
             </div>
         )
     }

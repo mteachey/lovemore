@@ -1,6 +1,6 @@
 import React, { Component } from 'react'; 
 import LoveMoreContext from '../LoveMoreContext'
-import './FilterSortRow.css';
+
 
 
 class FilterSortRow extends Component{
@@ -28,16 +28,17 @@ class FilterSortRow extends Component{
                     <form className="filter-sort-control " onSubmit={e => this.handleSubmitDate(e)}>        
                         <label htmlFor="search_date">Search For a Date</label>
                         <input id="search_date" name="search_date" type="date"/>
-                        <button type="submit">Search</button>
+                        <button className="button" type="submit">Search</button>
+                        <button className="button" onClick = {e => this.context.updateDateSelected(this.props.pageType,'all')}>All Dates</button>
                     </form>
-                    <button onClick = {e => this.context.updateDateSelected(this.props.pageType,'all')}>All Dates</button>
+                   
                 </div>
             )
         }
         else if(this.props.filterOptions==='type-only'){
             filter =  (
 
-                <div className="filter-sort-control">
+                <div className="filter-sort-control filter-type-only">
                     <label htmlFor="type_filter">Filter by Type</label>                    
                     <select id="type_filter"
                     onChange={e=>this.updateType(e.target.value)}
@@ -52,14 +53,14 @@ class FilterSortRow extends Component{
             )}
         else if(this.props.filterOptions==='all')
             {  filter = (
-                <div className="filter-sort-control">
-                    <div >
+                <div className="filter-sort-control filter-all">
+                    <div className="filter-sort-control ">
                     <form className="filter-sort-control-form" onSubmit={e => this.handleSubmitDate(e)}>        
                         <label htmlFor="search_date">Search For a Date</label>
                         <input id="search_date" name="search_date" type="date"/>
-                        <button type="submit">Search</button>
+                        <button className="button" type="submit">Search</button>
+                        <button className="button" onClick = {e => this.context.updateDateSelected(this.props.pageType,'all')}>All Dates</button>
                     </form>
-                    <button onClick = {e => this.context.updateDateSelected(this.props.pageType,'all')}>All Dates</button>
                     </div>
                     <div>
                     <label htmlFor="type_filter">Filter by Type</label>                    
