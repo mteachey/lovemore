@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom'
+import { Route, Link } from 'react-router-dom'
 import './App.css';
 import Home from './Home/Home.js';
 import Dashboard from './Dashboard/Dashboard.js';
@@ -8,7 +8,6 @@ import PastCare from './PastCare/PastCare.js'
 import PastGratitude from './PastGratitude/PastGratitude.js'
 import Inspiration from './Inspiration/Inspiration.js'
 import GoalForm from './GoalForm/GoalForm.js'
-import Nav from './Nav/Nav.js';
 import Footer from './Footer/Footer.js'
 import LoveMoreContext from './LoveMoreContext.js';
 import data from './data.js'
@@ -16,6 +15,7 @@ import config from './config.js'
 import { FormatDate } from './Functions/FormatDate'
 import Lotus from './Lotus.js'
 import LearnMorePage from './LearnMorePage/LearnMorePage'
+
 
 
 class App extends Component{
@@ -278,8 +278,7 @@ componentDidMount(){
     return(
       <div className="App">
         <LoveMoreContext.Provider value={contextValue}>
-        
-        <Lotus/>
+       
         <Route
             exact
             path='/'

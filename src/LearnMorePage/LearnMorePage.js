@@ -14,7 +14,6 @@ class LearnMorePage extends Component{
                 <Nav
                 pageType={'interior'}
                 />
-                    <h1>Love More Laugh More</h1>
                 </header>
                 <main>
     

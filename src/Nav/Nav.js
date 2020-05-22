@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
+import Lotus from '../Lotus.js'
 
 class Nav extends Component{
     state = {
@@ -28,10 +29,12 @@ makeNavVisible=()=>{
          List = (
             <nav className={`main-nav nav ${this.state.isNavHidden ? "" : "nav-visible"}`}>
                 <div className="mobile-menu-icon-container" onClick={this.makeNavVisible}>
-                    <div class="bar1"></div>
-                    <div class="bar2"></div>
-                    <div class="bar3"></div>
+                    <div className="bar1"></div>
+                    <div className="bar2"></div>
+                    <div className="bar3"></div>
                 </div>
+                <h1><Link className="site-heading" to={'/dashboard'}>Love More Laugh More</Link></h1>
+                <Lotus/>
                 <ul>
                     <li><NavLink to={`/dashboard`}>Dashboard</NavLink></li>
                     <li><NavLink to={`/learn-more`}>Learn More</NavLink></li>

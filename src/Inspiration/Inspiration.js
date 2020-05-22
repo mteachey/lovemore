@@ -15,7 +15,7 @@ class Inspiration extends Component{
                     <Nav
                     pageType={'interior'}
                     />
-                    <h1>Inspiration</h1>
+                    <h2>Inspiration</h2>
                 </header>
                 <main>
                     <RandomQuote/>
@@ -28,7 +28,7 @@ class Inspiration extends Component{
                      results ={this.context.inspiration}
                     />     
                     <ButtonRow
-                        links ={[{'/daily-form':'Today\'s Care & Gratitude'},{'/past-care':'Your Past Care Entries'},{'/past-gratitude':'Your Past Gratitudes'},{'/goal-form':'Set Your Goals'},{'/inspiration':'Get Inspired, Get Grateful'}]}
+                        links ={[{'/dashboard':'Your Dashboard'},{'/daily-form':'Today\'s Care & Gratitude'},{'/past-care':'Your Past Care Entries'},{'/past-gratitude':'Your Past Gratitudes'},{'/goal-form':'Set Your Goals'}]}
                         />                  
                 </main>
 

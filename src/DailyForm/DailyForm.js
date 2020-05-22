@@ -356,7 +356,7 @@ handleClickCancel = () => {
                     <Nav
                     pageType={'interior'}
                     />
-                    <h1>Today's Self-Care and Gratitude</h1>
+                    <h2>Today's Self-Care and Gratitude</h2>
                 </header>
                 <form className="daily-form" onSubmit={e=>this.handleSubmit(e)}>
                     {/*<div className="date-option">
@@ -519,7 +519,7 @@ handleClickCancel = () => {
              </div>
             </form>
             <ButtonRow
-                        links ={[{'/daily-form':'Today\'s Care & Gratitude'},{'/past-care':'Your Past Care Entries'},{'/past-gratitude':'Your Past Gratitudes'},{'/goal-form':'Set Your Goals'},{'/inspiration':'Get Inspired, Get Grateful'}]}
+                        links ={[{'/dashboard':'Your Dashboard'},{'/past-care':'Your Past Care Entries'},{'/past-gratitude':'Your Past Gratitudes'},{'/goal-form':'Set Your Goals'},{'/inspiration':'Get Inspired, Get Grateful'}]}
                         />    
         </section>
         )

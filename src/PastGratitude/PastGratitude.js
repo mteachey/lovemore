@@ -14,7 +14,7 @@ class PastGratitude extends Component{
                 <Nav
                 pageType={'interior'}
                 />
-                    <h1>Your Gratitude Entries</h1>
+                    <h2>Your Gratitude Entries</h2>
                 </header>
                 <main>
     
@@ -26,7 +26,7 @@ class PastGratitude extends Component{
                      typeOfResults = {'gratitudes'}
                     />    
                     <ButtonRow
-                        links ={[{'/daily-form':'Today\'s Care & Gratitude'},{'/past-care':'Your Past Care Entries'},{'/past-gratitude':'Your Past Gratitudes'},{'/goal-form':'Set Your Goals'},{'/inspiration':'Get Inspired, Get Grateful'}]}
+                        links ={[{'/dashboard':'Your Dashboard'},{'/daily-form':'Today\'s Care & Gratitude'},{'/past-care':'Your Past Care Entries'},{'/goal-form':'Set Your Goals'},{'/inspiration':'Get Inspired, Get Grateful'}]}
                         />               
                 </main>
 

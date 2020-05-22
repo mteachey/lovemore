@@ -1,3 +1,4 @@
+
 .daily-form{
     font-size: 17px;
 }
@@ -21,6 +22,7 @@ fieldset {
     text-align: left;
     max-width: 600px;
     margin: auto;
+    margin-bottom:75px;
 }
 
 .date-option {
@@ -113,14 +115,19 @@ input[type="text"]:disabled {
 }
 
 .goal-form select{
-border:1px solid #40004b;
-margin-bottom: 19px;
+    border:1px solid #40004b;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    margin-left: 10px;
+    font-size: 20px;
+    width:200px;
 }
 
 .goal-form {
     text-align: left;
     max-width: 500px;
     margin: auto;
+    margin-bottom:75px;
 }
 
 @media only screen and (min-width:760px){
@@ -134,5 +141,13 @@ margin-bottom: 19px;
 
     select {
         margin-bottom: 0;
+    }
+
+    .mood-input > div{
+        margin-bottom:20px;
+    }
+
+    .mood-input > div:nth-child(2){
+        margin-top:7px;
     }
 }

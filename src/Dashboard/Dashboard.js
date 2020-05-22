@@ -14,13 +14,13 @@ class Dashboard extends Component{
                 <Nav
                 pageType={'interior'}
                 />
-                    <h1>Your Laugh More Love More Dashboard</h1>
+                    <h2>Your Laugh More Love More Dashboard</h2>
                    <RandomQuote/>
                 </header>
                 <main>
                     <Progress/>
                     <ButtonRow
-                        links ={[{'/daily-form':'Today\'s Care & Gratitude'},{'/past-care':'Your Past Care Entries'},{'/past-gratitude':'Your Past Gratitudes'},{'/goal-form':'Set Your Goals'},{'/inspiration':'Get Inspired, Get Grateful'}]}
+                        links ={[{'/daily-form':'Today\'s Care & Gratitude'},{'/past-care':'Your Past Self-Care'},{'/past-gratitude':'Your Past Gratitudes'},{'/goal-form':'Set Your Goals'},{'/inspiration':'Get Inspired, Get Grateful'}]}
                         />
                 </main>
             </div>

@@ -14,7 +14,7 @@ class PastCare extends Component{
                 <Nav
                 pageType={'interior'}
                 />
-                    <h1>Your Self-Care Entries</h1>
+                    <h2>Your Self-Care Entries</h2>
                 </header>
                 <main>
                     <FilterSortRow
@@ -25,7 +25,7 @@ class PastCare extends Component{
                      typeOfResults = {'selfcares'}
                     /> 
                     <ButtonRow
-                        links ={[{'/daily-form':'Today\'s Care & Gratitude'},{'/past-care':'Your Past Care Entries'},{'/past-gratitude':'Your Past Gratitudes'},{'/goal-form':'Set Your Goals'},{'/inspiration':'Get Inspired, Get Grateful'}]}
+                        links ={[{'/dashboard':'Your Dashboard'},{'/daily-form':'Today\'s Care & Gratitude'},{'/past-gratitude':'Your Past Gratitudes'},{'/goal-form':'Set Your Goals'},{'/inspiration':'Get Inspired, Get Grateful'}]}
                         />                       
                 </main>
 

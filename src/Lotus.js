@@ -2,15 +2,6 @@ import React, { Component } from 'react';
 import {ReactComponent as LotusSVG } from './images/lotus.svg'
 import styled, { keyframes } from 'styled-components'
 
-const rotate = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-`;
-
 const fade = keyframes`
 0% {
 opacity:0;

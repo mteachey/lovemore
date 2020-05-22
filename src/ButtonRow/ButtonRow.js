@@ -15,6 +15,7 @@ class ButtonRow extends Component{
        link5:''
       };
 
+
     render(){
         
         let buttons=this.props.links;
@@ -23,7 +24,8 @@ class ButtonRow extends Component{
          { 
             const url = Object.keys(linkObject)[0];
             const lable = Object.values(linkObject)[0]
-            return (<Link key={i} to={url} className="button-link">{lable}</Link>)
+            return (<Link key={i} to={url} className="button-link">{lable}</Link>
+            )
           }        
          )
 

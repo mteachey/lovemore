@@ -56,10 +56,29 @@ h1{
   text-align:center;
   color:#40004b; 
   margin-bottom: 40px;
+  
+}
+
+h1 a.site-heading{
+  text-decoration: none;
+  color:#292e10; 
+  font-size:1.5em;
+}
+
+h1 a.site-heading:hover{
+  color:#738c11;
+  border-bottom:0px solid #996FAB;
+}
+
+h2 {
+  color: #40004b;
+  font-size: 1.75em;
 }
 
 h3 {
   font-size: 1.5em;
+  margin-block-start: .75em;
+  margin-block-end: .5em;
 }
 
 li{
@@ -81,6 +100,7 @@ p{
 
 .App .home #lotus{
   opacity:1;
+  top:10vh;
 }
 
 /*****navigation styles*****/
@@ -120,6 +140,7 @@ nav ul{
 .main-nav {
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 .main-nav li {
@@ -182,6 +203,10 @@ nav ul{
   background-color:#996FAB;
 }
 
+.nav-visible h1, .nav-visible svg {
+  display: none;
+}
+
 nav.nav-visible{
   display:flex;
   position: absolute;
@@ -207,16 +232,12 @@ nav.nav-visible ul{
   display:flex;
 }
 
-
-
-
 /******Filter Row******/
 .filter-sort-control-form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 
 .filter-sort-control{
     display:flex;
@@ -265,7 +286,6 @@ nav.nav-visible ul{
   border:1px solid #40004b;
   font-family:'Nunito', sans-serif;
 }
-
 
 button{
   border: 0px #fff solid;
@@ -403,7 +423,7 @@ color: rgb(170, 170, 170);
     background-color:#40004b;
     color:#fff;
     padding:10px;
-    width:120px;
+    width:105px;
     margin: 10px;
     text-decoration: none;
     display: inline-block;
@@ -416,6 +436,12 @@ color: rgb(170, 170, 170);
 .button-link:hover{
   background-color:#fff;
   color:#40004b;
+}
+
+/****learnmore****/
+.learn-more img {
+  border: 1px solid #40004b;
+  max-width: 300px;
 }
 
 /****footer styles*****/
@@ -441,8 +467,18 @@ color: rgb(170, 170, 170);
   margin-right:10px;
 }
 
+#lotus{
+  right: 50%;
+    transform: translateX(50%);
+}
+
 /****Start Media Queries*****/
 @media only screen and (min-width:760px){
+  h3 {
+    margin-block-start: .75em;
+    margin-block-end: .5em;
+  }
+
   .filter-sort-control-form {
     flex-direction: row;
   }
@@ -460,7 +496,32 @@ color: rgb(170, 170, 170);
       margin: 15px 0;
   }
 
-/***Dashboard List***/
+  .learn-more img {
+    border: 1px solid #40004b;
+    max-width: 400px;
+  }
+
+  .learn-more p {
+    padding: 0 20px;
+    text-align: left;
+}
+
+  .learn-more main, .about main {
+    max-width: 800px;
+    margin: auto;
+    text-align: left;
+}
+
+  .learn-more main > div {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    align-items: center;
+}
+ 
+
+/***Dashboard List MQ***/
 .recent-activities{
   background-color: transparent;
 }
