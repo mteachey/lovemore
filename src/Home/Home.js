@@ -25,15 +25,9 @@ signUpPopUp=()=>{
 
 signUpInClick=()=>{
    this.setState(prevState => ({ isBoxVisible: !prevState.isBoxVisible }));
-   console.log(`clicked`)
-}
-
-gotoLearnMore=()=>{
-    console.log(`gtLM clicked`)
 }
 
 learnMore=()=>{
-    console.log(this.state.isBoxVisible);
     if(this.state.isBoxVisible)
     {this.setState(prevState => ({ isBoxVisible: !prevState.isBoxVisible }));}
     //need to scroll to learn more

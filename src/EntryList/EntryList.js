@@ -7,13 +7,14 @@ import '../_styles/EntryList.css'
 class EntryList extends Component{
     static contextType = LoveMoreContext;
 
+
     nextPage=(direction)=>{
         //updateCurrentPage needs to happen before updateDisabled
         this.context.updateCurrentPage(this.props.typeOfResults, direction);
-      //  this.updateDisabled(this.props.pageType, direction);
      }
 
     render(){
+
         let {typeOfResults} = this.props;
         let results = this.context[typeOfResults];
         let page = this.context.current_display[typeOfResults].page;
@@ -44,45 +45,45 @@ class EntryList extends Component{
             (result.rating).toString().includes(selectedRating.toString())   
             )        
         } 
-       
+
        //pagination of results
-       let numberOfResults=results.length;
+      let numberOfResults=results.length;
         let arrayStart = ((page - 1)*20);
         let arrayEnd = (arrayStart + 20);
         let pageCurrentPageResults = [];
         let disabledForward = false;
         let disabledBack = true;
+        let disabledStart = false;
 
-        console.log(numberOfResults);
         if(arrayEnd >= numberOfResults){
             disabledForward = true;
             disabledBack = true;
+            disabledStart = true;
         }
   
         if(arrayEnd <= numberOfResults){
             for (let i=arrayStart;i<arrayEnd; i++){
-            let resultsObj = sortedResults[i];
+            let resultsObj = results[i];
                 pageCurrentPageResults = [...pageCurrentPageResults, resultsObj]
             }
+            results = pageCurrentPageResults;
+            disabledStart = false;
         }
         else{
             for (let i=arrayStart;i<numberOfResults; i++){
-                let resultsObj = sortedResults[i];
+                let resultsObj = results[i];
                 pageCurrentPageResults = [...pageCurrentPageResults, resultsObj]
             }
               disabledForward = true;
               disabledBack = false;
+              disabledStart = false;
+              results = pageCurrentPageResults;
         }
         
-        results = pageCurrentPageResults;
-        
+    
         return(
             <section className="results-list">
-                <div className="pagination-button-row">
-                    <button disabled={disabledForward} onClick = {e => this.nextPage('forward')}>Next 20</button>
-                    <button disabled={disabledBack} onClick = {e => this.nextPage('back')}>Back</button>
-                    <button onClick = {e => this.nextPage('reset')}>Reset</button>
-                 </div>
+                 
                     <ul className="result-list">                      
                         {results.map((entry,i)=> 
                         <EntryItem
@@ -92,6 +93,11 @@ class EntryList extends Component{
                         />
                         )}
                     </ul>
+                    <div className="pagination-button-row">
+                         <button disabled={disabledForward} onClick = {e => this.nextPage('forward')}>Next 20</button>
+                        <button disabled={disabledBack} onClick = {e => this.nextPage('back')}>Back</button>
+                        <button disabled={disabledStart} onClick = {e => this.nextPage('reset')}>Start</button>
+                 </div>
             </section>
         )
     }

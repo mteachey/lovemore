@@ -13,8 +13,8 @@ export default {
         {
             "id": "dots",
             "type": "patternDots",
-            "background": "#c4c816",
-            "color": "#ff000A",
+            "background": "#324211",
+            "color": "#fff",
             "size": 0,
             "padding": 1,
             "stagger": true
@@ -22,7 +22,7 @@ export default {
         {
             "id": "lines",
             "type": "patternLines",
-            "background": "#e7f294",
+            "background": "#738c11",
             "color": "#547326",
             "rotation": -45,
             "lineWidth": 0,

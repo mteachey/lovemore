@@ -10,7 +10,7 @@
 }
 
 .goal-item{
-    border: 1px solid #c2a5cf; 
+    border: 2px solid #c2a5cf; 
     border-radius: 5px;
     text-align: center;
     padding:5px;
@@ -18,15 +18,15 @@
 }
 
 .goal-item:nth-child(2){
-    border: 1px solid #40004b; 
+    border: 2px solid #40004b; 
 }
 
 .goal-item:nth-child(3){
-    border: 1px solid #762a83; 
+    border: 2px solid #762a83; 
 }
 
 .goal-item:nth-child(4){
-    border: 1px solid #9970ab; 
+    border: 2px solid #9970ab; 
 }
 
 .goal-item:nth-child(1){

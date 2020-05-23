@@ -59,11 +59,12 @@ static contextType = LoveMoreContext;
                     axisLeft={config.axisLeft}
                     labelSkipWidth={12}
                     labelSkipHeight={12}
-                    labelTextColor="inherit:darker(1.6)"
+                    labelTextColor="#fff"
                     animate={true}
                     motionStiffness={90}
                     motionDamping={15}
                     legends={config.legends}
+                    groupMode="grouped"
                 />
             </div>
         )

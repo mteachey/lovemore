@@ -12,9 +12,9 @@ export const CreateMoodEnergyData = (data) =>{
    let monthMoodData =[]
    let monthEnergyData =[]
   
-   for (let i=1; i < monthResults.length ; i++){
-       let newMoodObj = {"x":i.toString(),"y":monthResults[i-1].mood_level};
-       let newenergyObj = {"x":i.toString(),"y":monthResults[i-1].energy_level};
+   for (let i=1; i <= monthResults.length ; i++){
+      let newMoodObj = {"x":monthResults[i-1].date_modified.slice(8,10),"y":monthResults[i-1].mood_level};
+      let newenergyObj = {"x":monthResults[i-1].date_modified.slice(8,10),"y":monthResults[i-1].energy_level};
        monthMoodData.push(newMoodObj)
        monthEnergyData.push(newenergyObj)
    }

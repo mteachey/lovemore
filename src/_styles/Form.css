@@ -10,7 +10,7 @@ label {
 select {
     font-size: 14px;
     border:1px solid #40004b;
-    margin-bottom: 19px;
+    margin-bottom: 0px;
 }
 
 fieldset {
@@ -137,10 +137,6 @@ input[type="text"]:disabled {
 
     .gratitude-entries input, .activity-input input {
         font-size: 17px;
-    }
-
-    select {
-        margin-bottom: 0;
     }
 
     .mood-input > div{

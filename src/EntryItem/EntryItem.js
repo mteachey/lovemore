@@ -15,7 +15,7 @@ class EntryItem extends Component{
             <span className="result-content">{content}</span>
             <span className="result-date">{date_formatted}</span>
             <span className="result-type">Type : {type}</span>
-            <span className="result-rating">Your rating : {rating}</span>
+            <span className="result-rating">Rating : {rating}</span>
             </li> )
         }
         else if(typeOfResults === 'gratitudes'){

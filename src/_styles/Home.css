@@ -40,15 +40,15 @@ header.header-home {
 
 .box{
     border:1px solid #000;
-    width:300px;
+    width:260px;
     border-radius:5px;
     position:absolute;
-    top:-9vh;
+    top:20vh;
     left:50%;
     transform: translateX(-50%);
     background-color:#fff;
     background-color: #fff;
-    padding: 30px 50px;
+    padding: 30px 15px;
 }
 
 .closebtn {
@@ -80,7 +80,7 @@ header.header-home {
         width:400px;
         height:300px;
         border-radius:5px;
-        top:10vh;
+        top:15vh;
         left:50%;
         transform: translateX(-50%);
         padding: 30px 50px;

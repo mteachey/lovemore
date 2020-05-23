@@ -53,17 +53,28 @@ span.result-content, span.result-date {
 }
 
 span.result-type, span.result-rating {
-  width: 100px;
+  width: 66px;
   margin-top:9px
 }
 
+.pagination-button-row {
+  margin-top: 20px;
+}
+
 @media only screen and (min-width:760px){
-  .result-item{
+  .results-list {
+    margin-top: 30px;
+}
+
+ul.result-list{
+  margin-top:25px;
+}
+
+.result-item{
       flex-direction: row;
-      align-items: ;
   }
   
-  .result-item span{
+.result-item span{
           margin-bottom:0;
           width:150px;
           text-align:left;

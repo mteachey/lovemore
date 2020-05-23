@@ -236,11 +236,7 @@ if(newGratitude.length !== 0){
         return res.json()
       })
       .then(data => {
-          console.log(data)
           let formatedDateData = data.map(obj=>FormatDate(obj));
-         /* this.state.gratitude1.value = '';
-          this.state.gratitude2.value = '';
-          this.state.gratitude3.value = '';*/
 
         this.context.addGratitude(formatedDateData);
       })
@@ -269,7 +265,6 @@ if(newGratitude.length !== 0){
         return res.json()
       })
       .then(data => {
-          console.log(data)
           let formatedDateData = data.map(obj=>FormatDate(obj));
          this.context.addSelfCare(formatedDateData);
       })
@@ -300,9 +295,7 @@ if(newGratitude.length !== 0){
             
             let moodArray = [{data}];
             let formatedDateData = moodArray.map(obj=>FormatDate(obj));
-            console.log(`this is the mood data ${formatedDateData}`)
-            //not doing anything with Moods/Energy in first version
-           // this.context.addMoods(formatedDateData);
+            this.context.addMoods(formatedDateData);
         })
         .catch(error => {
           this.setState({ error })

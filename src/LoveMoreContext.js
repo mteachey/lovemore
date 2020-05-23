@@ -18,7 +18,6 @@ const LoveMoreContext = React.createContext({
       current_display:{},
       updateTypeSelected:()=>{},
       updateDateSelected:()=>{},
-      updateDisabled:()=>{},
       updateRatingSelected:()=>{},
       updateNumberofTotalResults:()=>{},
      

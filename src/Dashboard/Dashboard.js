@@ -4,6 +4,7 @@ import ButtonRow from '../ButtonRow/ButtonRow'
 import RandomQuote from '../RandomQuote/RandomQuote.js'
 import '../_styles/Dashboard.css';
 import Nav from '../Nav/Nav.js';
+import {Link} from 'react-router-dom';
 
 
 class Dashboard extends Component{
@@ -16,6 +17,7 @@ class Dashboard extends Component{
                 />
                     <h2>Your Laugh More Love More Dashboard</h2>
                    <RandomQuote/>
+                   <Link className="button-link block-link" to={`/daily-form`}>Today's Care &amp; Gratitude</Link>
                 </header>
                 <main>
                     <Progress/>

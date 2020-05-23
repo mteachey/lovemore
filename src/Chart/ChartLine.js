@@ -16,13 +16,10 @@ class ChartLine extends Component {
     render() {
         let array = this.context.moods;
         let lineData=data;
-      //  console.log(array)
         let moodEnergyData=[];
         if(array[0].date_formatted)
         { moodEnergyData = CreateMoodEnergyData(array);
             lineData = moodEnergyData;
-           // console.log(`this is my data ${moodEnergyData[0]["data"][0]}`)
-         //  console.log(`this is the given ${data[0]["data"][0]}`)
         }
         
 
@@ -32,8 +29,8 @@ class ChartLine extends Component {
     <ResponsiveLine
         data={lineData}
         margin={{ top: 30, right: 30, bottom: 90, left: 60 }}
-        xScale={{ type: 'point' }}
-        yScale={{ type: 'linear', min: 'auto', max: 'auto', stacked: false, reverse: false }}
+        xScale={{ type: 'point'}}
+        yScale={{ type: 'linear', min: '0', max: '5', stacked: false, reverse: false }}
         axisTop={null}
         axisRight={null}
         axisBottom={{

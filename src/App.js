@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import './App.css';
 import Home from './Home/Home.js';
 import Dashboard from './Dashboard/Dashboard.js';
@@ -13,10 +13,7 @@ import LoveMoreContext from './LoveMoreContext.js';
 import data from './data.js'
 import config from './config.js'
 import { FormatDate } from './Functions/FormatDate'
-import Lotus from './Lotus.js'
 import LearnMorePage from './LearnMorePage/LearnMorePage'
-
-
 
 class App extends Component{
   constructor(props){
@@ -32,9 +29,9 @@ class App extends Component{
       current_gratitude_results_page:1,
       current_selfcares_results_page:1,
       current_display:{
-        gratitudes:{page:1, date_to:'all', date_from:'', disabled:'start'},
-        selfcares :{page:1, date_to:'all', date_from:'', type:'all',rating:'all',disabled:'start'},
-        inspiration:{page:1, type:'all',disabled:'start'}
+        gratitudes:{page:1, date_to:'all', date_from:''},
+        selfcares :{page:1, date_to:'all', date_from:'', type:'all',rating:'all'},
+        inspiration:{page:1, type:'all'}
       }
     }//end of state 
   }
@@ -56,12 +53,6 @@ updateCurrentPage=(typeOfPage, direction)=>{
 updateTypeSelected=(typeOfPage,selectedType)=>{
   const {current_display} = this.state;
   current_display[typeOfPage].type = selectedType;
-  this.setState({current_display:current_display})
-}
-
-updateDisabled=(typeOfPage, direction)=>{
-  const {current_display} = this.state;
-  current_display[typeOfPage].disabled = direction;
   this.setState({current_display:current_display})
 }
 
@@ -146,6 +137,7 @@ componentDidMount(){
     return res.json()
   })
   .then(data=>{
+    
    let formatedDateData = data.map(obj=>FormatDate(obj));
     this.setState({
       selfcares:formatedDateData,
@@ -241,7 +233,6 @@ componentDidMount(){
     return res.json()
   })
   .then(data=>{
-   
     let formatedDateData = data.map(obj=>FormatDate(obj));
     this.setState({
       moods:formatedDateData,
@@ -272,7 +263,6 @@ componentDidMount(){
       updateRatingSelected:this.updateRatingSelected,
       current_display:this.state.current_display,
       updateTypeSelected:this.updateTypeSelected,
-      updateDisabled:this.updateDisabled,
       updateNumberofTotalResults:this.updateNumberofTotalResults,
       }
     return(

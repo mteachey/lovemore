@@ -7,6 +7,7 @@ class RandomQuote extends Component{
 
     state = {
         dailyQuote:'',
+        author:'',
         chooseQuoteRan:false,
      };
 
@@ -15,8 +16,9 @@ class RandomQuote extends Component{
         let numberOfQuotes = this.context.quotes.length;
         let quotePickNumber = Math.floor(Math.random() * (numberOfQuotes));
         let quote = this.context.quotes[quotePickNumber].content;
+        let author = this.context.quotes[quotePickNumber].author;
         
-        this.setState({choseQuoteRan:true, dailyQuote:quote}); 
+        this.setState({choseQuoteRan:true, dailyQuote:quote, author:author}); 
         //return quote
      }
 
@@ -28,7 +30,9 @@ componentDidMount(){
     render(){
         return(
             <div className="quote">
-                <p>{this.state.dailyQuote}</p>
+                <p>"{this.state.dailyQuote}"</p>
+                <p className="quote-author">-{this.state.author}</p>
+                
             </div>
         )
     }
