@@ -36,6 +36,7 @@ class App extends Component{
     }//end of state 
   }
 
+//Updating the current page of results being displayed on the different pages
 updateCurrentPage=(typeOfPage, direction)=>{
   let newPage = this.state.current_display[typeOfPage].page;
   if(direction === 'forward')

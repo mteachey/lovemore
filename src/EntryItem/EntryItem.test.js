@@ -2,16 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom'
 import { shallow } from 'enzyme'
 import toJson from 'enzyme-to-json'
-import ActivityList from './ActivityList'
+import EntryItem from './EntryItem'
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 
 
 
-describe(`ActivityList component`, () => {
+describe(`EntryItem component`, () => {
     
-
     it('renders without crashing', () => {
-        const list = [{
+
+        const entry = [{
             "gratitude_id":"1",
             "user_id":"1",
             "content":"A catch up phone call with Kelsie",
@@ -31,11 +31,11 @@ describe(`ActivityList component`, () => {
             "content":"I kept my cool with the service phone rep",
             "date_modified":"2020-05-14T19:10:27.090Z"           
         }]
-        const typePage='selfcares'
-        const listHeading = 'Your Most Recent Self-Care Activities'
-        const random = false
+        const typeOfResults = "selfcares"
+        const key=1
+           
         const div = document.createElement('div');
-        ReactDOM.render(<Router><ActivityList list={list} topThree={list} typePage={typePage} listHeading={listHeading} random ={random} /></Router>, div);
+        ReactDOM.render(<Router><EntryItem entry={entry} typeOfResults = {typeOfResults} key={key}/></Router>, div);
         ReactDOM.unmountComponentAtNode(div);
       });
 

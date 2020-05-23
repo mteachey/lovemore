@@ -6,6 +6,8 @@ class ActivityList extends Component{
     static contextType = LoveMoreContext;
 
     render(){
+
+        //getting the url for the "See All" button
         let linkURL = '/'
         if(this.props.typePage ==='selfcares'){
          linkURL = '/past-care'
@@ -15,6 +17,8 @@ class ActivityList extends Component{
            }
        
         let results = this.props.list;
+
+        //sorting the results by date and returning the three most recent
         let sortedResults = results;
         if(results[0].date_modified){
             sortedResults = results.sort((a,b)=>
