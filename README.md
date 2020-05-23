@@ -33,4 +33,4 @@ Copyright 2020
 
 Contact info - melindateachey@gmail.com
 
-Changelog — None at this timex
+Changelog — None at this time
