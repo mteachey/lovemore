@@ -25,7 +25,7 @@ describe(`ActivityList component`, () => {
             "date_modified":"2020-05-14T19:10:27.090Z"           
         }]
         const div = document.createElement('div');
-        ReactDOM.render(<ActivityList {...results} />, div);
+        ReactDOM.render(<ActivityList results={results} />, div);
         ReactDOM.unmountComponentAtNode(div);
       });
 
