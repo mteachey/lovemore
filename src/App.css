@@ -450,8 +450,8 @@ color: rgb(170, 170, 170);
 /****learnmore****/
 .learn-more img {
   border: 1px solid #40004b;
-  max-width: 300px;
-  min-width: 300px;
+  width: 300px;
+  height:auto;
 }
 
 /****footer styles*****/
@@ -518,7 +518,8 @@ color: rgb(170, 170, 170);
 
   .learn-more img {
     border: 1px solid #40004b;
-    max-width: 400px;
+    width: 400px;
+    height:auto;
   }
 
   .learn-more p {
