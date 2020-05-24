@@ -7,8 +7,6 @@ transition: 0.3s;
 border:1px solid black;
 }
 
-
-
 .chart-pie svg >g >g>g:nth-child(1) {
   transform: translateX(70px);
 }

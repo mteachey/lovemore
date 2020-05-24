@@ -1,7 +1,3 @@
-/*bright green #738c11;
-med green #324211
-darkest gren #2929e10
-muted green c4bd82*/
 
 .home{
     max-width:95%;
@@ -85,7 +81,4 @@ header.header-home {
         transform: translateX(-50%);
         padding: 30px 50px;
     }
-
-
-
 }

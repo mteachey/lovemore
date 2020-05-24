@@ -1,9 +1,4 @@
-/*colors
-bright green #738c11;
-med green #324211
-darkest gren #292e10
-muted green c4bd82
-*/
+
 
 .dashboard h1{
     margin-top:50px;
@@ -25,8 +20,6 @@ muted green c4bd82
 }
 
 .progress > section{
-    /*width:32%;*/
-    /*border:1px solid gray;*/
     margin-bottom:25px;
 }
 
@@ -61,10 +54,7 @@ p.quote-author{
     flex-direction:row;
     flex-wrap:wrap;
 }
-
 }
-
-
 
 @media only screen and (min-width:960px){
     .progress{
